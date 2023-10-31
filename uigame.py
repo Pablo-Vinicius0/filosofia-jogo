@@ -154,6 +154,7 @@ class Ui_Jogo(object):
         self.input_resposta.setStyleSheet("border-radius: 20px;\n"
 "background: #d9d9d9; padding-left: 30px")
         self.input_resposta.setMaxLength(100)
+        self.input_resposta.setPlaceholderText("Resposta")
         self.input_resposta.setObjectName("input_resposta")
         
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
