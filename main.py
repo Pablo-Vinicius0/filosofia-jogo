@@ -17,7 +17,8 @@ class MainWindow(QMainWindow, Ui_Jogo):
         self.reveladas = 0
 
         self.pushButton.clicked.connect(self.exibirDica)
-        self.sendButton.clicked.connect(self.makeHello)
+        self.sendButton.clicked.connect(self.sendAnswer)
+        self.input_resposta.returnPressed.connect(self.sendAnswer)
 
     def exibirDica(self):
         self.reveladas += 1
@@ -29,8 +30,9 @@ class MainWindow(QMainWindow, Ui_Jogo):
             self.pushButton.setText('Próxima')
 
 
-    def makeHello(self):
-        print('Bicha linha')
+    def sendAnswer(self):
+        text = self.input_resposta.text()
+        print(str(text))
 
 
 if __name__ == '__main__':

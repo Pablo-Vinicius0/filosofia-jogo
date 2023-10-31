@@ -163,6 +163,7 @@ class Ui_Jogo(object):
         self.sendButton.setIconSize(size)
         font.setFamily("Consolas")
         font.setPointSize(28)
+        self.sendButton.setStyleSheet('background: transparent;')
         self.sendButton.setFont(font)
         self.sendButton.setObjectName('sendButton')
         
