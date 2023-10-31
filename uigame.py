@@ -137,6 +137,7 @@ class Ui_Jogo(object):
 "background: #d9d9d9; padding-left: 30px")
         self.input_resposta.setMaxLength(100)
         self.input_resposta.setObjectName("input_resposta")
+        
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(1070, 628, 255, 90))
         font = QtGui.QFont()
@@ -151,23 +152,24 @@ class Ui_Jogo(object):
 "QPushButton::hover {\n"
 "    background: #d6d6d6;\n"
 "}")
+        self.pushButton.setObjectName("pushButton")
+        
         self.sendButton = QtWidgets.QPushButton(self.centralwidget)
-        self.sendButton.setGeometry(QtCore.QRect(1070, 628, 255, 90))
+        self.sendButton.setGeometry(QtCore.QRect(977, 648, 50, 50))
+        ico = QIcon(str(window_icon_path))
         font = QtGui.QFont()
+        self.sendButton.setIcon(ico)
+        size = QtCore.QSize(50, 50)
+        self.sendButton.setIconSize(size)
         font.setFamily("Consolas")
         font.setPointSize(28)
         self.sendButton.setFont(font)
         self.sendButton.setObjectName('sendButton')
-        self.pushButton.setObjectName("pushButton")
+        
         Jogo.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(Jogo)
         QtCore.QMetaObject.connectSlotsByName(Jogo)
-
-
-        ico = QIcon(str(window_icon_path))
-        self.sendButton.setIcon(ico)
-        
 
     def retranslateUi(self, Jogo):
         _translate = QtCore.QCoreApplication.translate

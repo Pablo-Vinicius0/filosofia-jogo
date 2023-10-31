@@ -5,7 +5,6 @@ from uigame import Ui_Jogo
 from PyQt5.QtCore import QObject, QEvent
 from PyQt5.QtGui import QKeyEvent
 
-
 class MainWindow(QMainWindow, Ui_Jogo):
     def __init__(self, parent=None):
         super().__init__(parent)
