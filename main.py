@@ -4,7 +4,6 @@ import sys
 from ui_mainwindow import Ui_Jogo
 from PyQt5.QtCore import QObject, QEvent
 from PyQt5.QtGui import QKeyEvent
-from typing import cast
 
 class MainWindow(QMainWindow, Ui_Jogo):
     def __init__(self, parent=None):
