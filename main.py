@@ -4,7 +4,6 @@ import sys
 from jogoeuzawow_ui import Ui_Jogo
 from PyQt5.QtCore import QObject, QEvent
 from PyQt5.QtGui import QKeyEvent
-from typing import cast
 
 class MainWindow(QMainWindow, Ui_Jogo):
     def __init__(self, parent=None):
@@ -19,8 +18,6 @@ class MainWindow(QMainWindow, Ui_Jogo):
 
         self.pushButton.clicked.connect(self.exibirDica())
 
-
-    
     def exibirDica(self):
         self.reveladas += 1
         if self.reveladas == 1:
