@@ -52,7 +52,7 @@ class Ui_Jogo(object):
         font.setPointSize(20)
         self.dica1_label.setFont(font)
         self.dica1_label.setStyleSheet("border-radius: 20px;\n"
-"background: #d9d9d9;")
+"background: #d9d9d9; padding-left: 15px")
         self.dica1_label.setObjectName("dica1_label")
         self.pontuacao_p1 = QtWidgets.QLabel(self.centralwidget)
         self.pontuacao_p1.setGeometry(QtCore.QRect(30, 20, 90, 90))
@@ -95,7 +95,7 @@ class Ui_Jogo(object):
         font.setPointSize(20)
         self.dica2_label.setFont(font)
         self.dica2_label.setStyleSheet("border-radius: 20px;\n"
-"background: #d9d9d9;")
+"background: #d9d9d9; padding-left: 15px")
         self.dica2_label.setObjectName("dica2_label")
         self.dica3 = QtWidgets.QWidget(self.centralwidget)
         self.dica3.setEnabled(True)
@@ -118,7 +118,7 @@ class Ui_Jogo(object):
         font.setPointSize(20)
         self.dica3_label.setFont(font)
         self.dica3_label.setStyleSheet("border-radius: 20px;\n"
-"background: #d9d9d9;")
+"background: #d9d9d9; padding-left: 15px")
         self.dica3_label.setObjectName("dica3_label")
         self.input_resposta = QtWidgets.QLineEdit(self.centralwidget)
         self.input_resposta.setGeometry(QtCore.QRect(30, 628, 1020, 90))
@@ -132,7 +132,7 @@ class Ui_Jogo(object):
         font.setPointSize(20)
         self.input_resposta.setFont(font)
         self.input_resposta.setStyleSheet("border-radius: 20px;\n"
-"background: #d9d9d9;")
+"background: #d9d9d9; padding-left: 30px")
         self.input_resposta.setMaxLength(100)
         self.input_resposta.setObjectName("input_resposta")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
@@ -168,13 +168,3 @@ class Ui_Jogo(object):
         self.dica3_pontos.setText(_translate("Jogo", "8"))
         self.dica3_label.setText(_translate("Jogo", "Botafogo Palmeiras Santos Corinthians Coritiba"))
         self.pushButton.setText(_translate("Jogo", "Não Sei"))
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Principal = QtWidgets.QMainWindow()
-    ui = Ui_Jogo()
-    ui.setupUi(Principal)
-    Principal.show()
-    sys.exit(app.exec_())
-    
