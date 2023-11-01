@@ -3,6 +3,8 @@ from utils import load_json
 from variables import dicas_path
 from PyQt5.QtWidgets import *
 from random import randint
+from ui_final import FinalWindow
+from ui_inicio import InicialWindow
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -16,10 +18,18 @@ class MainWindow(QMainWindow):
     def initUI(self):
         self.stackedWidget = QStackedWidget(self)
         
+        self.inicialWindow = InicialWindow()
+        self.dica_index += 1
+        self.inicialWindow.button.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(self.dica_index))
+        self.stackedWidget.addWidget(self.inicialWindow)
+        
         for i in range(len(self.dicas)):
             ui_pergunta = self.createWindow()
             self.stackedWidget.addWidget(ui_pergunta.centralwidget)
-
+            
+        self.finalWindow = FinalWindow()
+        self.stackedWidget.addWidget(self.finalWindow)
+            
         self.setCentralWidget(self.stackedWidget)
         
     def createWindow(self) -> Ui_Jogo():
