@@ -1,10 +1,10 @@
 import PyQt5.QtCore
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import sys
-from ui_mainwindow import Ui_Jogo
+from jogoeuzawow_ui import Ui_Jogo
 from PyQt5.QtCore import QObject, QEvent
 from PyQt5.QtGui import QKeyEvent
-# Samuel
+from typing import cast
 
 class MainWindow(QMainWindow, Ui_Jogo):
     def __init__(self, parent=None):
@@ -17,7 +17,7 @@ class MainWindow(QMainWindow, Ui_Jogo):
 
         self.reveladas = 0
 
-        self.pushButton.clicked.connect(exibirDica)
+        self.pushButton.clicked.connect(self.exibirDica())
 
 
     
