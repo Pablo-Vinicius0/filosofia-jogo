@@ -1,7 +1,7 @@
 import PyQt5.QtCore
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import sys
-from jogoeuzawow_ui import Ui_Jogo
+from uigame import Ui_Jogo
 from PyQt5.QtCore import QObject, QEvent
 from PyQt5.QtGui import QKeyEvent
 
