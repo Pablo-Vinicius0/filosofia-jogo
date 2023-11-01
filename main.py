@@ -19,8 +19,6 @@ class MainWindow(QMainWindow, Ui_Jogo):
 
         self.pushButton.clicked.connect(exibirDica)
 
-
-    
     def exibirDica(self):
         self.reveladas += 1
         if self.reveladas == 1:
