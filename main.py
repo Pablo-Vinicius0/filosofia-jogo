@@ -5,6 +5,7 @@ from uigame import Ui_Jogo
 from PyQt5.QtCore import QObject, QEvent
 from PyQt5.QtGui import QKeyEvent
 
+
 class MainWindow(QMainWindow, Ui_Jogo):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -16,7 +17,8 @@ class MainWindow(QMainWindow, Ui_Jogo):
 
         self.reveladas = 0
 
-        self.pushButton.clicked.connect(self.exibirDica())
+        self.pushButton.clicked.connect(self.exibirDica)
+        self.sendButton.clicked.connect(self.makeHello)
 
     def exibirDica(self):
         self.reveladas += 1
@@ -26,6 +28,11 @@ class MainWindow(QMainWindow, Ui_Jogo):
         elif self.reveladas == 2:
             self.dica3.setVisible(True)
             self.pushButton.setText('Próxima')
+
+
+    def makeHello(self):
+        print('Bicha linha')
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

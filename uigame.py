@@ -9,6 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtGui import QIcon
+from variables import window_icon_path
 
 
 class Ui_Jogo(object):
@@ -149,11 +151,23 @@ class Ui_Jogo(object):
 "QPushButton::hover {\n"
 "    background: #d6d6d6;\n"
 "}")
+        self.sendButton = QtWidgets.QPushButton(self.centralwidget)
+        self.sendButton.setGeometry(QtCore.QRect(1070, 628, 255, 90))
+        font = QtGui.QFont()
+        font.setFamily("Consolas")
+        font.setPointSize(28)
+        self.sendButton.setFont(font)
+        self.sendButton.setObjectName('sendButton')
         self.pushButton.setObjectName("pushButton")
         Jogo.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(Jogo)
         QtCore.QMetaObject.connectSlotsByName(Jogo)
+
+
+        ico = QIcon(str(window_icon_path))
+        self.sendButton.setIcon(ico)
+        
 
     def retranslateUi(self, Jogo):
         _translate = QtCore.QCoreApplication.translate
