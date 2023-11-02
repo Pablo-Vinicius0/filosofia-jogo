@@ -1,6 +1,6 @@
 import sys
 import PyQt5.QtCore
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication, QMainWindow, QStackedWidget
 from PyQt5.QtCore import QObject, QEvent
 from PyQt5.QtGui import QKeyEvent
 from time import sleep
@@ -9,7 +9,20 @@ from variables import (dicas_path)
 from ui_dicas import Ui_Jogo, makeMsgBox
 from utils import (load_json)
 
-class MainWindow(QMainWindow, Ui_Jogo):
+from ui_inicial import InicialWindow
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+        
+    def initUI(self):
+        self.stackedWidget = QStackedWidget(self)
+        self.inicialWindow = InicialWindow()
+        self.stackedWidget.addWidget(self.inicialWindow)
+        self.setCentralWidget(self.stackedWidget)
+
+"""class MainWindow(QMainWindow, Ui_Jogo):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setupUi(self)
@@ -40,7 +53,7 @@ class MainWindow(QMainWindow, Ui_Jogo):
         text = str(self.input_resposta.text())
         print(text)
 
-
+"""
 
 
 if __name__ == '__main__':
