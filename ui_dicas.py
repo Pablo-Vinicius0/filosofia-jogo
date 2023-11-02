@@ -186,7 +186,7 @@ class Ui_Jogo(object):
         self.sendButton.setFont(font)
         self.sendButton.setObjectName('sendButton')
         self.input_resposta.setPlaceholderText('Resposta')
-        
+                
         Jogo.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(Jogo)
