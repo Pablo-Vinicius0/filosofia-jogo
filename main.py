@@ -3,9 +3,10 @@ import PyQt5.QtCore
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QtCore import QObject, QEvent
 from PyQt5.QtGui import QKeyEvent
+from time import sleep
 
 from variables import (dicas_path)
-from ui_dicas import Ui_Jogo
+from ui_dicas import Ui_Jogo, makeMsgBox
 from utils import (load_json)
 
 class MainWindow(QMainWindow, Ui_Jogo):
@@ -33,10 +34,14 @@ class MainWindow(QMainWindow, Ui_Jogo):
         elif self.reveladas == 2:
             self.dica3.setVisible(True)
             self.pushButton.setText('Próxima')
+            makeMsgBox(self)           
  
     def sendAnswer(self):
         text = str(self.input_resposta.text())
         print(text)
+
+
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

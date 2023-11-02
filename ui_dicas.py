@@ -11,6 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QIcon
 from variables import window_icon_path
+from PyQt5.QtWidgets import QMessageBox
 
 
 class Ui_Jogo(object):
@@ -208,3 +209,10 @@ class Ui_Jogo(object):
         self.dica3_pontos.setText(_translate("Jogo", "8"))
         self.dica3_label.setText(_translate("Jogo", "Pergunta 3"))
         self.pushButton.setText(_translate("Jogo", "Não Sei"))
+
+def makeMsgBox(self):
+        msgBox = QMessageBox()
+        msgBox.setWindowTitle('Explicação')
+        msgBox.setText('Explicação de que a mulher de Edgol vai sofrer, de acordo com Guigui. Ele também fala que a dedada de Durex é perigosa')
+        msgBox.setStandardButtons(QMessageBox.Ok)
+        msgBox.exec()
