@@ -214,5 +214,6 @@ def makeMsgBox(self):
         msgBox = QMessageBox()
         msgBox.setWindowTitle('Explicação')
         msgBox.setText('Explicação de que a mulher de Edgol vai sofrer, de acordo com Guigui. Ele também fala que a dedada de Durex é perigosa')
+        msgBox.textFormat()
         msgBox.setStandardButtons(QMessageBox.Ok)
         msgBox.exec()
