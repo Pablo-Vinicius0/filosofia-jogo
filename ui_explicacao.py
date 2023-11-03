@@ -49,15 +49,15 @@ class ExplicacaoWindow(QtWidgets.QMainWindow):
         font.setFamily("Consolas")
         font.setPointSize(32)
         self.explicacao_label.setFont(font)
-        self.explicacao_label.setStyleSheet("background: qlineargradient(spread:pad, x1:0.489, y1:0, x2:0.488636, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(9, 36, 126, 255));\n"
+        self.explicacao_label.setStyleSheet("background: qlineargradient(spread:pad, x1:0.591273, y1:1, x2:0.511363, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(9, 36, 126, 255));\n"
 "border-radius: 45px;\n"
 "border: 2px solid #fff;\n"
-"color: #fff;\n"
-"padding-top: 30px;")
-        self.explicacao_label.setTextFormat(QtCore.Qt.RichText)
+"color: #fff;\n")
+        self.explicacao_label.setTextFormat(QtCore.Qt.AutoText)
         self.explicacao_label.setScaledContents(False)
-        self.explicacao_label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.explicacao_label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignJustify|QtCore.Qt.AlignVCenter)
         self.explicacao_label.setWordWrap(True)
+        self.explicacao_label.setMargin(80)
         self.explicacao_label.setIndent(10)
         self.explicacao_label.setObjectName("explicacao_label")
         self.proxima_btn = QtWidgets.QPushButton(self)
