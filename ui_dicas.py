@@ -15,6 +15,7 @@ from variables import window_icon_path
 
 class Ui_Jogo(object):
     def setupUi(self, Jogo):
+        self.dica = None
         Jogo.setObjectName("Jogo")
         Jogo.setFixedSize(1366, 768)
         Jogo.setStyleSheet("color: #fff")

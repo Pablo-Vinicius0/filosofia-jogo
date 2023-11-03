@@ -16,7 +16,6 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.dicas = load_json(dicas_path)
         self.dica_atual = None
-        self.respostas = []
         self.respondidas = []
         self.pag_index = 1
         
@@ -40,6 +39,7 @@ class MainWindow(QMainWindow):
         ui_dica.setupUi(self)
         
         self.dica_atual = self.takeHint()
+        ui_dica.dica = self.dica_atual
         dica1, dica2, dica3 = self.dica_atual['dicas']
         
         ui_dica.dica1_label.setText(dica1)
@@ -80,10 +80,11 @@ class MainWindow(QMainWindow):
     def sendAnswer(self, ui_dica: Ui_Jogo) -> None:
         text = str(ui_dica.input_resposta.text())
 
-        if text.lower() in self.dica_atual['resposta']:
+        if text.lower() in ui_dica.dica['resposta']:
             print("Resposta correta!")
         else:
             print("Resposta errada!")
+            print(ui_dica.dica['resposta'])
 
 '''
 class MainWindow(QMainWindow, Ui_Jogo):
