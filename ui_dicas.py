@@ -17,12 +17,14 @@ class Ui_Jogo(object):
     def setupUi(self, Jogo):
         Jogo.setObjectName("Jogo")
         Jogo.setFixedSize(1366, 768)
+        Jogo.setStyleSheet("color: #fff")
         font = QtGui.QFont()
         font.setFamily("Consolas")
         font.setPointSize(24)
         Jogo.setFont(font)
         self.centralwidget = QtWidgets.QWidget(Jogo)
         self.centralwidget.setObjectName("centralwidget")
+        self.centralwidget.setStyleSheet("QWidget #centralwidget{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.0170455 rgba(0, 0, 255, 255), stop:0.596591 rgba(0, 0, 127, 255));}")
         self.titulo = QtWidgets.QLabel(self.centralwidget)
         self.titulo.setGeometry(QtCore.QRect(150, 20, 1055, 90))
         font = QtGui.QFont()
@@ -175,19 +177,17 @@ class Ui_Jogo(object):
         font.setFamily("Consolas")
         font.setPointSize(28)
         self.pushButton.setFont(font)
-        self.pushButton.setStyleSheet(u"border-radius: 20px;\n"
-"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.0170455 rgba(0, 0, 255, 255), stop:0.596591 rgba(0, 0, 127, 255));\n"
-"border: 2px solid #fff;\n"
-"\n"
-"QPushButton {\n"
-"	background: #d9d9d9;\n"
+        self.pushButton.setStyleSheet(u"QPushButton {\n"
+"       background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.0170455 rgba(0, 0, 255, 255), stop:0.596591 rgba(0, 0, 127, 255));\n"
+"       border: 2px solid #fff;\n"
 "	border-radius: 20px;\n"
 "}\n"
 "\n"
 "QPushButton::hover {\n"
-"	background: #d6d6d6;\n"
+"	background: qlineargradient(spread:pad, x1:0.494, y1:0.5, x2:0.5, y2:1, stop:0.335227 rgba(9, 34, 126, 228), stop:1 rgba(0, 0, 0, 0));\n"
 "}")
         self.pushButton.setObjectName("pushButton")
+        self.pushButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         
         self.sendButton = QtWidgets.QPushButton(self.centralwidget)
         self.sendButton.setGeometry(QtCore.QRect(977, 648, 50, 50))
@@ -201,6 +201,7 @@ class Ui_Jogo(object):
         self.sendButton.setStyleSheet('background: transparent;')
         self.sendButton.setFont(font)
         self.sendButton.setObjectName('sendButton')
+        self.sendButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.input_resposta.setPlaceholderText('Resposta')
                 
         Jogo.setCentralWidget(self.centralwidget)
