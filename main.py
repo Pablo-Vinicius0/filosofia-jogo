@@ -3,7 +3,7 @@ import PyQt5.QtCore
 from PyQt5.QtWidgets import QApplication, QMainWindow, QStackedWidget
 from PyQt5.QtCore import QObject, QEvent
 from PyQt5.QtGui import QKeyEvent
-from time import sleep
+from random import randint
 
 from variables import (dicas_path)
 from ui_dicas import Ui_Jogo, makeMsgBox
