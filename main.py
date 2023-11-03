@@ -8,6 +8,7 @@ from ui_dicas import Ui_Jogo
 from utils import (load_json)
 
 from ui_inicial import InicialWindow
+from ui_explicacao import ExplicacaoWindow
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -29,8 +30,15 @@ class MainWindow(QMainWindow):
         for i in range(len(self.dicas)):
             ui_dica = self.createWindow()
             self.stackedWidget.addWidget(ui_dica.centralwidget)
+            ui_explicacao = ExplicacaoWindow()
+            ui_explicacao.proxima_btn.clicked.connect(self.passarPag)
+            self.stackedWidget.addWidget(ui_explicacao)
         
         self.setCentralWidget(self.stackedWidget)
+        
+    def passarPag(self):
+        self.pag_index += 1
+        self.stackedWidget.setCurrentIndex(self.pag_index)
         
     def createWindow(self) -> Ui_Jogo():
         ui_dica = Ui_Jogo()
@@ -72,8 +80,7 @@ class MainWindow(QMainWindow):
             ui_dica.dica3.setVisible(True)
             ui_dica.pushButton.setText('Explicação')
         elif ui_dica.reveladas == 3:
-            self.pag_index += 1
-            self.stackedWidget.setCurrentIndex(self.pag_index)
+            self.passarPag()
             
     def sendAnswer(self, ui_dica: Ui_Jogo) -> None:
         text = str(ui_dica.input_resposta.text())
