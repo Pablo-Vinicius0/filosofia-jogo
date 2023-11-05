@@ -15,6 +15,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.initUI()
+        self.showMaximized()
         
     def initUI(self):
         self.stackedWidget = QStackedWidget(self)
