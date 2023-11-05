@@ -23,42 +23,42 @@ class MainWindow(QMainWindow):
         self.stackedWidget.addWidget(self.inicialWindow)
         self.setCentralWidget(self.stackedWidget)
 
-"""class MainWindow(QMainWindow, Ui_Jogo):
-    def __init__(self, parent=None):
-        super().__init__(parent)
-        self.setupUi(self)
+# class MainWindow(QMainWindow, Ui_Jogo):
+#     def __init__(self, parent=None):
+#         super().__init__(parent)
+#         self.setupUi(self)
  
-        self.dicas = load_json(dicas_path)
+#         self.dicas = load_json(dicas_path)
     	
-        self.titulo.setText('3 Pistas - Filosofia')
-        self.dica2.setHidden(True)
-        self.dica3.setHidden(True)
+#         self.titulo.setText('3 Pistas - Filosofia')
+#         self.dica2.setHidden(True)
+#         self.dica3.setHidden(True)
 
-        self.reveladas = 0
+#         self.reveladas = 0
 
-        self.pushButton.clicked.connect(self.exibirDica)
-        self.sendButton.clicked.connect(self.sendAnswer)
-        self.input_resposta.returnPressed.connect(self.sendAnswer)
+#         self.pushButton.clicked.connect(self.exibirDica)
+#         self.sendButton.clicked.connect(self.sendAnswer)
+#         self.input_resposta.returnPressed.connect(self.sendAnswer)
 
-    def exibirDica(self):
-        self.reveladas += 1
-        if self.reveladas == 1:
-            self.dica2.setVisible(True)
+#     def exibirDica(self):
+#         self.reveladas += 1
+#         if self.reveladas == 1:
+#             self.dica2.setVisible(True)
         
-        elif self.reveladas == 2:
-            self.dica3.setVisible(True)
-            self.pushButton.setText('Próxima')
-            makeMsgBox(self)           
+#         elif self.reveladas == 2:
+#             self.dica3.setVisible(True)
+#             self.pushButton.setText('Próxima')
+#             makeMsgBox(self)           
  
-    def sendAnswer(self):
-        text = str(self.input_resposta.text())
-        print(text)
-
-"""
+#     def sendAnswer(self):
+#         text = str(self.input_resposta.text())
+#         print(text)
 
 
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    jogo = MainWindow()
-    jogo.show()
-    app.exec()
+
+
+# if __name__ == '__main__':
+#     app = QApplication(sys.argv)
+#     jogo = MainWindow()
+#     jogo.show()
+#     app.exec()

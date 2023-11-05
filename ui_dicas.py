@@ -30,8 +30,9 @@ class Ui_Jogo(object):
         font.setFamily("Consolas")
         font.setPointSize(36)
         self.titulo.setFont(font)
-        self.titulo.setStyleSheet("border-radius: 20px;\n"
-"background: #D9D9D9;")
+        self.titulo.setStyleSheet(u"border-radius: 20px;\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.0170455 rgba(0, 0, 255, 255), stop:0.596591 rgba(0, 0, 127, 255));\n"
+"border: 2px solid #fff;")
         self.titulo.setAlignment(QtCore.Qt.AlignCenter)
         self.titulo.setObjectName("titulo")
         self.turno = QtWidgets.QLabel(self.centralwidget)
@@ -50,8 +51,9 @@ class Ui_Jogo(object):
         font.setFamily("Consolas")
         font.setPointSize(36)
         self.dica1_pontos.setFont(font)
-        self.dica1_pontos.setStyleSheet("border-radius: 20px;\n"
-"background: #d9d9d9;")
+        self.dica1_pontos.setStyleSheet(u"border-radius: 20px;\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.0170455 rgba(0, 0, 255, 255), stop:0.596591 rgba(0, 0, 127, 255));\n"
+"border: 2px solid #fff;")
         self.dica1_pontos.setAlignment(QtCore.Qt.AlignCenter)
         self.dica1_pontos.setObjectName("dica1_pontos")
         self.dica1_label = QtWidgets.QLabel(self.dica1)
@@ -60,8 +62,10 @@ class Ui_Jogo(object):
         font.setFamily("Consolas")
         font.setPointSize(20)
         self.dica1_label.setFont(font)
-        self.dica1_label.setStyleSheet("border-radius: 20px;\n"
-"background: #d9d9d9; padding-left: 15px")
+        self.dica1_label.setStyleSheet(u"border-radius: 20px;\n"
+"border-color: rgb(255, 255, 255);\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.0170455 rgba(0, 0, 255, 255), stop:0.596591 rgba(0, 0, 127, 255));\n"
+"border: 2px solid #fff;")
         self.dica1_label.setObjectName("dica1_label")
         self.pontuacao_p1 = QtWidgets.QLabel(self.centralwidget)
         self.pontuacao_p1.setGeometry(QtCore.QRect(30, 20, 90, 90))
@@ -69,8 +73,9 @@ class Ui_Jogo(object):
         font.setFamily("Consolas")
         font.setPointSize(36)
         self.pontuacao_p1.setFont(font)
-        self.pontuacao_p1.setStyleSheet("border-radius: 20px;\n"
-"background: #D9D9D9;")
+        self.pontuacao_p1.setStyleSheet(u"border-radius: 20px;\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.0170455 rgba(0, 0, 255, 255), stop:0.596591 rgba(0, 0, 127, 255));\n"
+"border: 2px solid #fff;")
         self.pontuacao_p1.setAlignment(QtCore.Qt.AlignCenter)
         self.pontuacao_p1.setObjectName("pontuacao_p1")
         self.pontuacao_p1_label = QtWidgets.QLabel(self.centralwidget)
@@ -85,8 +90,9 @@ class Ui_Jogo(object):
         font.setFamily("Consolas")
         font.setPointSize(36)
         self.pontuacao_p2.setFont(font)
-        self.pontuacao_p2.setStyleSheet("border-radius: 20px;\n"
-"background: #D9D9D9;")
+        self.pontuacao_p2.setStyleSheet(u"border-radius: 20px;\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.0170455 rgba(0, 0, 255, 255), stop:0.596591 rgba(0, 0, 127, 255));\n"
+"border: 2px solid #fff;")
         self.pontuacao_p2.setAlignment(QtCore.Qt.AlignCenter)
         self.pontuacao_p2.setObjectName("pontuacao_p2")
         self.pontuacao_p2_label = QtWidgets.QLabel(self.centralwidget)
@@ -105,8 +111,9 @@ class Ui_Jogo(object):
         font.setFamily("Consolas")
         font.setPointSize(36)
         self.dica2_pontos.setFont(font)
-        self.dica2_pontos.setStyleSheet("border-radius: 20px;\n"
-"background: #d9d9d9;")
+        self.dica2_pontos.setStyleSheet(u"border-radius: 20px;\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.0170455 rgba(0, 0, 255, 255), stop:0.596591 rgba(0, 0, 127, 255));\n"
+"border: 2px solid #fff;")
         self.dica2_pontos.setAlignment(QtCore.Qt.AlignCenter)
         self.dica2_pontos.setObjectName("dica2_pontos")
         self.dica2_label = QtWidgets.QLabel(self.dica2)
@@ -115,8 +122,9 @@ class Ui_Jogo(object):
         font.setFamily("Consolas")
         font.setPointSize(20)
         self.dica2_label.setFont(font)
-        self.dica2_label.setStyleSheet("border-radius: 20px;\n"
-"background: #d9d9d9; padding-left: 15px")
+        self.dica2_label.setStyleSheet(u"border-radius: 20px;\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.0170455 rgba(0, 0, 255, 255), stop:0.596591 rgba(0, 0, 127, 255));\n"
+"border: 2px solid #fff;")
         self.dica2_label.setObjectName("dica2_label")
         self.dica3 = QtWidgets.QWidget(self.centralwidget)
         self.dica3.setEnabled(True)
@@ -128,8 +136,9 @@ class Ui_Jogo(object):
         font.setFamily("Consolas")
         font.setPointSize(36)
         self.dica3_pontos.setFont(font)
-        self.dica3_pontos.setStyleSheet("border-radius: 20px;\n"
-"background: #d9d9d9;")
+        self.dica3_pontos.setStyleSheet(u"border-radius: 20px;\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.0170455 rgba(0, 0, 255, 255), stop:0.596591 rgba(0, 0, 127, 255));\n"
+"border: 2px solid #fff;")
         self.dica3_pontos.setAlignment(QtCore.Qt.AlignCenter)
         self.dica3_pontos.setObjectName("dica3_pontos")
         self.dica3_label = QtWidgets.QLabel(self.dica3)
@@ -138,8 +147,10 @@ class Ui_Jogo(object):
         font.setFamily("Consolas")
         font.setPointSize(20)
         self.dica3_label.setFont(font)
-        self.dica3_label.setStyleSheet("border-radius: 20px;\n"
-"background: #d9d9d9; padding-left: 15px")
+        self.dica3_label.setStyleSheet(u"border-radius: 20px;\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.0170455 rgba(0, 0, 255, 255), stop:0.596591 rgba(0, 0, 127, 255));\n"
+"border: 2px solid #fff;\n"
+"")
         self.dica3_label.setObjectName("dica3_label")
         self.input_resposta = QtWidgets.QLineEdit(self.centralwidget)
         self.input_resposta.setGeometry(QtCore.QRect(30, 628, 1020, 90))
@@ -152,8 +163,9 @@ class Ui_Jogo(object):
         font.setFamily("Consolas")
         font.setPointSize(20)
         self.input_resposta.setFont(font)
-        self.input_resposta.setStyleSheet("border-radius: 20px;\n"
-"background: #d9d9d9; padding-left: 30px")
+        self.input_resposta.setStyleSheet(u"border-radius: 20px;\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.0170455 rgba(0, 0, 255, 255), stop:0.596591 rgba(0, 0, 127, 255));\n"
+"border: 2px solid #fff;")
         self.input_resposta.setMaxLength(100)
         self.input_resposta.setPlaceholderText("Resposta")
         self.input_resposta.setObjectName("input_resposta")
@@ -164,13 +176,17 @@ class Ui_Jogo(object):
         font.setFamily("Consolas")
         font.setPointSize(28)
         self.pushButton.setFont(font)
-        self.pushButton.setStyleSheet("QPushButton {\n"
-"    background: #d9d9d9;\n"
-"    border-radius: 20px;\n"
+        self.pushButton.setStyleSheet(u"border-radius: 20px;\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.0170455 rgba(0, 0, 255, 255), stop:0.596591 rgba(0, 0, 127, 255));\n"
+"border: 2px solid #fff;\n"
+"\n"
+"QPushButton {\n"
+"	background: #d9d9d9;\n"
+"	border-radius: 20px;\n"
 "}\n"
 "\n"
 "QPushButton::hover {\n"
-"    background: #d6d6d6;\n"
+"	background: #d6d6d6;\n"
 "}")
         self.pushButton.setObjectName("pushButton")
         
