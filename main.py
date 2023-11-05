@@ -3,7 +3,6 @@ import PyQt5.QtCore
 from PyQt5.QtWidgets import QApplication, QMainWindow, QStackedWidget
 from PyQt5.QtCore import QObject, QEvent
 from PyQt5.QtGui import QKeyEvent
-from time import sleep
 
 from variables import (dicas_path)
 from ui_dicas import Ui_Jogo, makeMsgBox
@@ -55,8 +54,8 @@ class MainWindow(QMainWindow, Ui_Jogo):
     def sendAnswer(self):
         text = str(self.input_resposta.text())
         print(text)
-
 '''
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     jogo = MainWindow()
