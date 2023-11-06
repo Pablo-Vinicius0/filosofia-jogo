@@ -6,7 +6,7 @@ from PyQt5.QtGui import QKeyEvent
 from random import randint
 
 from variables import (dicas_path)
-from ui_dicas import Ui_Jogo, makeMsgBox
+from ui_dicas import Ui_Jogo
 from utils import (load_json)
 
 from ui_inicial import InicialWindow
