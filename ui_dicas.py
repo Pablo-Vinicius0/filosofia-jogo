@@ -11,7 +11,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QIcon
 from variables import window_icon_path
-from PyQt5.QtWidgets import QMessageBox
 
 
 class Ui_Jogo(object):
@@ -65,7 +64,7 @@ class Ui_Jogo(object):
         self.dica1_label.setStyleSheet(u"border-radius: 20px;\n"
 "border-color: rgb(255, 255, 255);\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.0170455 rgba(0, 0, 255, 255), stop:0.596591 rgba(0, 0, 127, 255));\n"
-"border: 2px solid #fff;")
+"border: 2px solid #fff; padding: 15px;")
         self.dica1_label.setObjectName("dica1_label")
         self.pontuacao_p1 = QtWidgets.QLabel(self.centralwidget)
         self.pontuacao_p1.setGeometry(QtCore.QRect(30, 20, 90, 90))
@@ -124,7 +123,7 @@ class Ui_Jogo(object):
         self.dica2_label.setFont(font)
         self.dica2_label.setStyleSheet(u"border-radius: 20px;\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.0170455 rgba(0, 0, 255, 255), stop:0.596591 rgba(0, 0, 127, 255));\n"
-"border: 2px solid #fff;")
+"border: 2px solid #fff; padding: 15px;")
         self.dica2_label.setObjectName("dica2_label")
         self.dica3 = QtWidgets.QWidget(self.centralwidget)
         self.dica3.setEnabled(True)
@@ -149,7 +148,7 @@ class Ui_Jogo(object):
         self.dica3_label.setFont(font)
         self.dica3_label.setStyleSheet(u"border-radius: 20px;\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.0170455 rgba(0, 0, 255, 255), stop:0.596591 rgba(0, 0, 127, 255));\n"
-"border: 2px solid #fff;\n"
+"border: 2px solid #fff; padding: 15px;\n"
 "")
         self.dica3_label.setObjectName("dica3_label")
         self.input_resposta = QtWidgets.QLineEdit(self.centralwidget)
@@ -165,7 +164,7 @@ class Ui_Jogo(object):
         self.input_resposta.setFont(font)
         self.input_resposta.setStyleSheet(u"border-radius: 20px;\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.0170455 rgba(0, 0, 255, 255), stop:0.596591 rgba(0, 0, 127, 255));\n"
-"border: 2px solid #fff;")
+"border: 2px solid #fff; padding: 30px;")
         self.input_resposta.setMaxLength(100)
         self.input_resposta.setPlaceholderText("Resposta")
         self.input_resposta.setObjectName("input_resposta")
@@ -225,11 +224,3 @@ class Ui_Jogo(object):
         self.dica3_pontos.setText(_translate("Jogo", "8"))
         self.dica3_label.setText(_translate("Jogo", "Pergunta 3"))
         self.pushButton.setText(_translate("Jogo", "Não Sei"))
-
-def makeMsgBox(self):
-        msgBox = QMessageBox()
-        msgBox.setWindowTitle('Explicação')
-        msgBox.setText('Explicação de que a mulher de Edgol vai sofrer, de acordo com Guigui. Ele também fala que a dedada de Durex é perigosa')
-        msgBox.textFormat()
-        msgBox.setStandardButtons(QMessageBox.Ok)
-        msgBox.exec()
