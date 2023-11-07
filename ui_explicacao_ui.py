@@ -52,14 +52,15 @@ class Ui_Explicacao(object):
         self.explicacao_label.setObjectName(u"explicacao_label")
         self.explicacao_label.setGeometry(QRect(60, 60, 1246, 648))
         self.explicacao_label.setFont(font)
-        self.explicacao_label.setStyleSheet(u"background: qlineargradient(spread:pad, x1:0.489, y1:0, x2:0.488636, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(9, 36, 126, 255));\n"
+        self.explicacao_label.setLayoutDirection(Qt.RightToLeft)
+        self.explicacao_label.setStyleSheet(u"background: qlineargradient(spread:pad, x1:0.591273, y1:1, x2:0.511363, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(9, 36, 126, 255));\n"
 "border-radius: 45px;\n"
 "border: 2px solid #fff;\n"
 "color: #fff;\n"
-"padding-top: 30px;")
-        self.explicacao_label.setTextFormat(Qt.RichText)
+"")
+        self.explicacao_label.setTextFormat(Qt.AutoText)
         self.explicacao_label.setScaledContents(False)
-        self.explicacao_label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.explicacao_label.setAlignment(Qt.AlignJustify|Qt.AlignVCenter)
         self.explicacao_label.setWordWrap(True)
         self.explicacao_label.setMargin(80)
         self.explicacao_label.setIndent(10)
