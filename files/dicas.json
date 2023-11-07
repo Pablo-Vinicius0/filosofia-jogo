@@ -1,46 +1,134 @@
 {
     "1": {
         "dicas": [
-            "Descobriu a gravidade",
-            "Enfiou uma agulha no olho",
-            "Recebeu um tuqui na cabesa por uma masa"
+            "Doutrina da Escolha Deliberada",
+            "Hábito de fazer o que é certo",
+            "Ser bom e fazer o que é certo"
         ],
+        "resposta_exibir": "Virtude para Aristóteles",
         "resposta": [
-            "newton",
-            "isaac newton"
+            "aristoteles",
+            "aristóteles",
+            "virtude de aristoteles",
+            "virtude de aristóteles",
+            "virtude para aristóteles",
+            "virtude para aristoteles"
+        ],
+        "explicacao": [
+            "A resposta \"virtude para Aristóteles\" reflete as ideias centrais de Aristóteles sobre a virtude, destacando a escolha deliberada de agir corretamente, a formação de hábitos virtuosos e a busca pela excelência moral, fundamentais na ética aristotélica."
         ]
     },
     "2": {
         "dicas": [
-            "Pintor famoso da Mona Lisa",
-            "Gênio do Renascimento",
-            "Escreveu o Código de Voo"
+            "Estado de Plenitude Existencial",
+            "Viver bem e plenamente",
+            "Ser uma pessoa boa"
         ],
+        "resposta_exibir": "Felicidade para Aristóteles",
         "resposta": [
-            "da vinci",
-            "leonardo da vinci"
+            "aristoteles",
+            "aristóteles",
+            "felicidade para aristoteles",
+            "felicidade para aristóteles",
+            "felicidade para aristóteles"
+        ],
+        "explicacao": [
+            "A resposta \"felicidade para Aristóteles\" se relaciona com essas afirmações porque Aristóteles associava a felicidade a um estado de plenitude existencial, que é alcançado vivendo bem e plenamente, o que, por sua vez, envolve ser uma pessoa boa, virtuosa e ética, buscando uma vida de satisfação duradoura."
         ]
     },
-        "3": {
+    "3": {
         "dicas": [
-            "Descobriu a eletricidade",
-            "Inventor da lâmpada",
-            "Fez experimentos com pipas"
+            "Maestria das paixões",
+            "Viver de forma sábia",
+            "Ser uma pessoa boa e tranquila"
         ],
+        "resposta_exibir": "Virtude para Sêneca",
         "resposta": [
-            "tesla",
-            "nikola tesla"
+            "seneca",
+            "sêneca",
+            "virtude para sêneca",
+            "virtude para sêneca",
+            "virtude de sêneca",
+            "virtude de sêneca"
+        ],
+        "explicacao": [
+            "A resposta \"virtude para Sêneca\" está relacionada a essas afirmações porque Sêneca enfatiza que a virtude implica em controlar as paixões, levando a uma vida sábia e tranquila e, consequentemente, a ser uma pessoa boa e equilibrada. A maestria das paixões é fundamental na virtude estóica, levando a uma vida virtuosa, serena e sábia, que é o cerne da filosofia de Sêneca."
         ]
     },
-        "4": {
+    "4": {
         "dicas": [
-            "Famoso físico teórico",
-            "Desenvolveu a Teoria da Relatividade",
-            "E=mc^2"
+            "Conformidade com o destino",
+            "Tranquilidade interior",
+            "Paz interior na calma e na serenidade"
         ],
+        "resposta_exibir": "Felicidade para Sêneca",
         "resposta": [
-            "einstein",
-            "albert einstein"
+            "seneca",
+            "sêneca",
+            "felicidade para sêneca",
+            "felicidade para sêneca"
+        ],
+        "explicacao": [
+            "A resposta \"Felicidade para Sêneca\" está relacionada a essas afirmações porque Sêneca ensinava que a felicidade surge da conformidade com o destino, o que leva à tranquilidade interior e à paz na calma e serenidade. Para ele, a felicidade envolve aceitar as circunstâncias, manter a paz interior e encontrar contentamento na virtude, independentemente das adversidades. Esses aspectos estão interconectados em sua concepção de felicidade."
+        ]
+    },
+    "5": {
+        "dicas": [
+            "Período do governo de Péricles",
+            "Os princípios estabelecidos foram a Isonomia, a Isegoria e o de Isocracia",
+            "Época em que a democracia ateniense atingiu a sua plenitude"
+        ],
+        "resposta_exibir": "Sêculo de ouro de Atenas",
+        "resposta": [
+            "século de ouro de atenas",
+            "século de ouro de atenas"
+        ],
+        "explicacao": [
+            "Trata-se do momento histórico em que Aristóteles viveu, sendo um tempo de confiança, de crescimento e avanço da democracia ateniense, que neste momento exigia novas discussões e reelaboração de ideias e princípios referentes à vida na pólis."
+        ]
+    },
+    "6": {
+        "dicas": [
+            "Não há uma verdade pré-estabelecida cabível apenas a ser seguida sem reflexão e/ou questionamento",
+            "A cada ação, fazer uma escolha, a cada escolha, um desafio",
+            "Não se apresenta de forma imperativa, mas de forma que cada sujeito seja responsável por seus próprios atos e escolhas"
+        ],
+        "resposta_exibir": "Ética para Aristóteles",
+        "resposta": [
+            "ética aristotélica",
+            "ética de aristoteles"
+        ],
+        "explicacao": [
+            "Para Aristóteles, a ética opera no campo do possível, tudo aquilo que depende das deliberações, escolhas e da ação humana. Ele propõe a ideia da ação guiada pela razão como um princípio fundamental da existência ética."
+        ]
+    },
+    "7": {
+        "dicas": [
+            "É produto do hábito, é tudo aquilo que podemos alterar pelo hábito",
+            "É adquirida através da prática, assim como as artes",
+            "Está relacionada com as ações e emoções, que por sua vez estão relacionadas com o prazer ou sofrimento"
+        ],
+        "resposta_exibir": "Excelência Moral",
+        "resposta": [
+            "excelência moral",
+            "virtude moral"
+        ],
+        "explicacao": [
+            "A excelência moral é uma disposição da alma relacionada com a escolha de ações e emoções, disposição esta consistente num meio-termo determinado pela razão."
+        ]
+    },
+    "8": {
+        "dicas": [
+            "Atualmente, cada vez mais se defende a necessidade de ser dessa forma",
+            "Para Sêneca, este termo possui caráter negativo",
+            "Substituível por volúvel no texto de Sêneca"
+        ],
+        "resposta_exibir": "Versatilidade",
+        "resposta": [
+            "versatilidade"
+        ],
+        "explicacao": [
+            "No texto de Sêneca, a versatilidade possui um caráter negativo, ao passo que para nós, a versatilidade é algo positivo. Atualmente, cada vez mais se defende a necessidade de sermos versáteis. No caso do texto de Sêneca, podemos substituir o termo versátil por volúvel e assim nos aproximarmos mais da ideia que Sêneca quer nos passar."
         ]
     }
 }

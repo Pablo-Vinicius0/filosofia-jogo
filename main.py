@@ -32,6 +32,8 @@ class MainWindow(QMainWindow):
             self.stackedWidget.addWidget(ui_dica.centralwidget)
             ui_explicacao = ExplicacaoWindow()
             ui_explicacao.proxima_btn.clicked.connect(self.passarPag)
+            ui_explicacao.resposta_label.setText(ui_dica.dica['resposta_exibir'])
+            ui_explicacao.explicacao_label.setText(ui_dica.dica['explicacao'][0])
             self.stackedWidget.addWidget(ui_explicacao)
         
         self.setCentralWidget(self.stackedWidget)

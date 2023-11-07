@@ -86,24 +86,27 @@ color: #fff;</string>
      <pointsize>32</pointsize>
     </font>
    </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
    <property name="styleSheet">
-    <string notr="true">background: qlineargradient(spread:pad, x1:0.489, y1:0, x2:0.488636, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(9, 36, 126, 255));
+    <string notr="true">background: qlineargradient(spread:pad, x1:0.591273, y1:1, x2:0.511363, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(9, 36, 126, 255));
 border-radius: 45px;
 border: 2px solid #fff;
 color: #fff;
-padding-top: 30px;</string>
+</string>
    </property>
    <property name="text">
     <string>Para Aristóteles, a ética opera no campo do possível, tudo aquilo que depende das deliberações, escolhas e da ação humana. Ele propõe a ideia da ação guiada pela razão como um princípio fundamental da existência ética.</string>
    </property>
    <property name="textFormat">
-    <enum>Qt::RichText</enum>
+    <enum>Qt::AutoText</enum>
    </property>
    <property name="scaledContents">
     <bool>false</bool>
    </property>
    <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    <set>Qt::AlignJustify|Qt::AlignVCenter</set>
    </property>
    <property name="wordWrap">
     <bool>true</bool>
