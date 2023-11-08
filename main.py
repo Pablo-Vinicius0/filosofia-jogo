@@ -79,16 +79,21 @@ class MainWindow(QMainWindow):
                 self.respondidas.append(dica)
                 return dica
 
+    def resposta():
+        if acertou:
+            ui_dica.pushButton.setText("Explicação")
+
     def exibirDica(self, ui_dica: Ui_Jogo) -> None:
         ui_dica.reveladas += 1
+
+        if ui_dica.pushButton.text() == "Explicação":
+            self.passarPag()
         
         if ui_dica.reveladas == 1:
             ui_dica.dica2.setVisible(True)
         elif ui_dica.reveladas == 2:
             ui_dica.dica3.setVisible(True)
             ui_dica.pushButton.setText('Explicação')
-        elif ui_dica.reveladas == 3:
-            self.passarPag()
             
     def sendAnswer(self, ui_dica: Ui_Jogo) -> None:
         text = str(ui_dica.input_resposta.text())
