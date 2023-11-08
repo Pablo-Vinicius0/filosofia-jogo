@@ -34,6 +34,7 @@ class LoginWindow(QMainWindow):
         self.label.setGeometry(QRect(83, 30, 1200, 90))
         self.label.setMaximumSize(QSize(16777215, 16777215))
         font = QFont()
+        font.setFamily("Consolas")
         font.setPointSize(24)
         self.label.setFont(font)
         self.label.setStyleSheet(u"background-color: rgb(0, 0, 127);\n"
@@ -41,10 +42,22 @@ class LoginWindow(QMainWindow):
 "border: 2px solid #fff;\n"
 "border-radius: 20px;")
         self.label.setAlignment(Qt.AlignCenter)
+
+        self.errorLabel = QLabel(self.centralwidget)
+        self.errorLabel.setObjectName(u"errorLabel")
+        self.errorLabel.setGeometry(QRect(400, 665, 565, 50))
+        font_error = QFont()
+        font_error.setFamily("Consolas")
+        font_error.setPointSize(12)
+        self.errorLabel.setFont(font_error)
+        self.errorLabel.setAlignment(Qt.AlignCenter)
+        self.errorLabel.setStyleSheet("background: transparent;")
+
         self.lineEdit = QLineEdit(self.centralwidget)
         self.lineEdit.setObjectName(u"lineEdit")
         self.lineEdit.setGeometry(QRect(308, 220, 750, 90))
         font1 = QFont()
+        font1.setFamily("Consolas")
         font1.setPointSize(24)
         self.lineEdit.setFont(font1)
         self.lineEdit.setStyleSheet(u"background-color: rgb(0, 0, 127);\n"
@@ -90,3 +103,10 @@ class LoginWindow(QMainWindow):
         self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Jogador 2", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Jogar", None))
     # retranslateUi
+
+    def valideUsernames(self) -> bool:
+        user1, user2 = str(self.lineEdit.text()), str(self.lineEdit_2.text())
+
+        if len(user1) >= 3 and len(user2) >= 3:
+            return True
+        return False

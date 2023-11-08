@@ -24,13 +24,13 @@ class MainWindow(QMainWindow):
         
     def initUI(self) -> None:
         self.stackedWidget = QStackedWidget(self)
-        
+
         self.inicialWindow = InicialWindow()
         self.inicialWindow.iniciar_btn.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(self.pag_index))
         self.stackedWidget.addWidget(self.inicialWindow)
         
         self.loginWindow = LoginWindow()
-        self.loginWindow.pushButton.clicked.connect(self.passarPag)
+        self.loginWindow.pushButton.clicked.connect(self.checkUsernames)
         self.stackedWidget.addWidget(self.loginWindow)
         
         for i in range(len(self.dicas)):
@@ -44,7 +44,7 @@ class MainWindow(QMainWindow):
         
         self.setCentralWidget(self.stackedWidget)
         
-    def passarPag(self):
+    def passarPag(self) -> None:
         self.pag_index += 1
         self.stackedWidget.setCurrentIndex(self.pag_index)
         
@@ -98,6 +98,12 @@ class MainWindow(QMainWindow):
         else:
             print("Resposta errada!")
             print(ui_dica.dica['resposta'])
+
+    def checkUsernames(self) -> None:
+        if self.loginWindow.valideUsernames():
+            self.passarPag()
+        else:
+            self.loginWindow.errorLabel.setText("Os usernames devem ter pelo menos 3 caracteres")
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
