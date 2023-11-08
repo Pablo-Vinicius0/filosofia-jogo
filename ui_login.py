@@ -18,7 +18,7 @@ from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PyQt5.QtWidgets import (QApplication, QLabel, QLineEdit, QMainWindow,
     QPushButton, QSizePolicy, QStatusBar, QWidget)
 
-class Ui_MainWindow(QMainWindow):
+class LoginWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi()
@@ -34,7 +34,7 @@ class Ui_MainWindow(QMainWindow):
         self.label.setGeometry(QRect(83, 30, 1200, 90))
         self.label.setMaximumSize(QSize(16777215, 16777215))
         font = QFont()
-        font.setPointSize(18)
+        font.setPointSize(24)
         self.label.setFont(font)
         self.label.setStyleSheet(u"background-color: rgb(0, 0, 127);\n"
 "color: rgb(255, 255, 255);\n"
@@ -45,7 +45,7 @@ class Ui_MainWindow(QMainWindow):
         self.lineEdit.setObjectName(u"lineEdit")
         self.lineEdit.setGeometry(QRect(310, 220, 750, 90))
         font1 = QFont()
-        font1.setPointSize(14)
+        font1.setPointSize(24)
         self.lineEdit.setFont(font1)
         self.lineEdit.setStyleSheet(u"background-color: rgb(0, 0, 127);\n"
 "color: rgb(255, 255, 255);\n"
@@ -66,15 +66,17 @@ class Ui_MainWindow(QMainWindow):
         self.pushButton.setGeometry(QRect(590, 540, 250, 90))
         self.pushButton.setFont(font)
         self.pushButton.setCursor(QCursor(Qt.PointingHandCursor))
-        self.pushButton.setStyleSheet(u"background-color: rgb(0, 0, 127);\n"
-"color: rgb(255, 255, 255);\n"
-"border: 2px solid #fff;\n"
-"border-radius: 20px;")
+        self.pushButton.setStyleSheet(u"QPushButton {\n"
+"   background-color: qlineargradient(spread:pad, x1:0.528409, y1:0.454, x2:1, y2:1, stop:0.0511364 rgba(0, 0, 107, 255), stop:1 rgba(0, 0, 255, 255));\n"
+"   color: rgb(255, 255, 255);\n"
+"   border: 2px solid #fff;\n"
+"   border-radius: 20px;\n"
+"}\n"
+"QPushButton::hover {\n"
+"   background: qlineargradient(spread:pad, x1:0.494, y1:0.5, x2:0.5, y2:1, stop:0.335227 rgba(9, 34, 126, 228), stop:1 rgba(0, 0, 0, 0));\n"
+"}\n")
         self.pushButton.setIconSize(QSize(24, 24))
         self.setCentralWidget(self.centralwidget)
-        self.statusbar = QStatusBar(self)
-        self.statusbar.setObjectName(u"statusbar")
-        self.setStatusBar(self.statusbar)
 
         self.retranslateUi()
 
@@ -88,10 +90,3 @@ class Ui_MainWindow(QMainWindow):
         self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Jogador 2", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Jogar", None))
     # retranslateUi
-
-if __name__ == "__main__":
-    import sys
-    app = QApplication(sys.argv)
-    jogo = Ui_MainWindow()
-    jogo.show()
-    app.exec()

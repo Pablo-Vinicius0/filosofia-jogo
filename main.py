@@ -9,6 +9,7 @@ from utils import (load_json)
 
 from ui_inicial import InicialWindow
 from ui_explicacao import ExplicacaoWindow
+from ui_login import LoginWindow
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -23,9 +24,14 @@ class MainWindow(QMainWindow):
         
     def initUI(self) -> None:
         self.stackedWidget = QStackedWidget(self)
+        
         self.inicialWindow = InicialWindow()
         self.inicialWindow.iniciar_btn.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(self.pag_index))
         self.stackedWidget.addWidget(self.inicialWindow)
+        
+        self.loginWindow = LoginWindow()
+        self.loginWindow.pushButton.clicked.connect(self.passarPag)
+        self.stackedWidget.addWidget(self.loginWindow)
         
         for i in range(len(self.dicas)):
             ui_dica = self.createWindow()
