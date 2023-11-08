@@ -43,7 +43,7 @@ class LoginWindow(QMainWindow):
         self.label.setAlignment(Qt.AlignCenter)
         self.lineEdit = QLineEdit(self.centralwidget)
         self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setGeometry(QRect(310, 220, 750, 90))
+        self.lineEdit.setGeometry(QRect(308, 220, 750, 90))
         font1 = QFont()
         font1.setPointSize(24)
         self.lineEdit.setFont(font1)
@@ -54,7 +54,7 @@ class LoginWindow(QMainWindow):
 "padding: 10px;")
         self.lineEdit_2 = QLineEdit(self.centralwidget)
         self.lineEdit_2.setObjectName(u"lineEdit_2")
-        self.lineEdit_2.setGeometry(QRect(310, 380, 750, 90))
+        self.lineEdit_2.setGeometry(QRect(308, 380, 750, 90))
         self.lineEdit_2.setFont(font1)
         self.lineEdit_2.setStyleSheet(u"background-color: rgb(0, 0, 127);\n"
 "color: rgb(255, 255, 255);\n"
@@ -63,7 +63,7 @@ class LoginWindow(QMainWindow):
 "padding: 10px;")
         self.pushButton = QPushButton(self.centralwidget)
         self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(590, 540, 250, 90))
+        self.pushButton.setGeometry(QRect(558, 540, 250, 90))
         self.pushButton.setFont(font)
         self.pushButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.pushButton.setStyleSheet(u"QPushButton {\n"
