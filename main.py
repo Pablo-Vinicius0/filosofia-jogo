@@ -18,6 +18,10 @@ class MainWindow(QMainWindow):
         self.dica_atual = None
         self.respondidas = []
         self.pag_index = 1
+        self.player1 = {"nome": "", "pontos": 0}
+        self.player2 = {"nome": "", "pontos": 0}
+        
+        self.dica_windows = []
         
         self.initUI()
         self.showMaximized()
@@ -36,6 +40,7 @@ class MainWindow(QMainWindow):
         for i in range(len(self.dicas)):
             ui_dica = self.createWindow()
             self.stackedWidget.addWidget(ui_dica.centralwidget)
+            self.dica_windows.append(ui_dica)
             ui_explicacao = ExplicacaoWindow()
             ui_explicacao.proxima_btn.clicked.connect(self.passarPag)
             ui_explicacao.resposta_label.setText(ui_dica.dica['resposta_exibir'])
@@ -106,6 +111,12 @@ class MainWindow(QMainWindow):
 
     def checkUsernames(self) -> None:
         if self.loginWindow.valideUsernames():
+            p1_nome, p2_nome = str(self.loginWindow.lineEdit.text()), str(self.loginWindow.lineEdit_2.text())
+            
+            for pag in self.dica_windows:
+                pag.pontuacao_p1_label.setText(p1_nome)
+                pag.pontuacao_p2_label.setText(p2_nome)
+            
             self.passarPag()
         else:
             self.loginWindow.errorLabel.setText("Os usernames devem ter pelo menos 3 caracteres")
