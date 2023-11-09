@@ -9,6 +9,7 @@ from utils import (load_json)
 
 from ui_inicial import InicialWindow
 from ui_explicacao import ExplicacaoWindow
+from ui_login import LoginWindow
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -23,9 +24,14 @@ class MainWindow(QMainWindow):
         
     def initUI(self) -> None:
         self.stackedWidget = QStackedWidget(self)
+
         self.inicialWindow = InicialWindow()
         self.inicialWindow.iniciar_btn.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(self.pag_index))
         self.stackedWidget.addWidget(self.inicialWindow)
+        
+        self.loginWindow = LoginWindow()
+        self.loginWindow.pushButton.clicked.connect(self.checkUsernames)
+        self.stackedWidget.addWidget(self.loginWindow)
         
         for i in range(len(self.dicas)):
             ui_dica = self.createWindow()
@@ -38,7 +44,7 @@ class MainWindow(QMainWindow):
         
         self.setCentralWidget(self.stackedWidget)
         
-    def passarPag(self):
+    def passarPag(self) -> None:
         self.pag_index += 1
         self.stackedWidget.setCurrentIndex(self.pag_index)
         
@@ -73,16 +79,21 @@ class MainWindow(QMainWindow):
                 self.respondidas.append(dica)
                 return dica
 
+    def resposta():
+        if acertou:
+            ui_dica.pushButton.setText("Explicação")
+
     def exibirDica(self, ui_dica: Ui_Jogo) -> None:
         ui_dica.reveladas += 1
+
+        if ui_dica.pushButton.text() == "Explicação":
+            self.passarPag()
         
         if ui_dica.reveladas == 1:
             ui_dica.dica2.setVisible(True)
         elif ui_dica.reveladas == 2:
             ui_dica.dica3.setVisible(True)
             ui_dica.pushButton.setText('Explicação')
-        elif ui_dica.reveladas == 3:
-            self.passarPag()
             
     def sendAnswer(self, ui_dica: Ui_Jogo) -> None:
         text = str(ui_dica.input_resposta.text())
@@ -92,6 +103,12 @@ class MainWindow(QMainWindow):
         else:
             print("Resposta errada!")
             print(ui_dica.dica['resposta'])
+
+    def checkUsernames(self) -> None:
+        if self.loginWindow.valideUsernames():
+            self.passarPag()
+        else:
+            self.loginWindow.errorLabel.setText("Os usernames devem ter pelo menos 3 caracteres")
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

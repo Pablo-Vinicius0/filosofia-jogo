@@ -8,42 +8,57 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+from PyQt5.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
     QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QLabel, QLineEdit, QMainWindow,
+from PyQt5.QtWidgets import (QApplication, QLabel, QLineEdit, QMainWindow,
     QPushButton, QSizePolicy, QStatusBar, QWidget)
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        if not MainWindow.objectName():
-            MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(910, 600)
-        MainWindow.setMaximumSize(QSize(16777215, 16777215))
-        MainWindow.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:0.528409, y1:0.454, x2:1, y2:1, stop:0.0511364 rgba(0, 0, 107, 255), stop:1 rgba(0, 0, 255, 255));")
-        self.centralwidget = QWidget(MainWindow)
+class LoginWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setupUi()
+    def setupUi(self):
+        if not self.objectName():
+            self.setObjectName(u"self")
+        self.setFixedSize(1366, 768)
+        self.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:0.528409, y1:0.454, x2:1, y2:1, stop:0.0511364 rgba(0, 0, 107, 255), stop:1 rgba(0, 0, 255, 255));")
+        self.centralwidget = QWidget(self)
         self.centralwidget.setObjectName(u"centralwidget")
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
         self.label.setGeometry(QRect(83, 30, 1200, 90))
         self.label.setMaximumSize(QSize(16777215, 16777215))
         font = QFont()
-        font.setPointSize(18)
+        font.setFamily("Consolas")
+        font.setPointSize(24)
         self.label.setFont(font)
         self.label.setStyleSheet(u"background-color: rgb(0, 0, 127);\n"
 "color: rgb(255, 255, 255);\n"
 "border: 2px solid #fff;\n"
 "border-radius: 20px;")
         self.label.setAlignment(Qt.AlignCenter)
+
+        self.errorLabel = QLabel(self.centralwidget)
+        self.errorLabel.setObjectName(u"errorLabel")
+        self.errorLabel.setGeometry(QRect(400, 665, 565, 50))
+        font_error = QFont()
+        font_error.setFamily("Consolas")
+        font_error.setPointSize(12)
+        self.errorLabel.setFont(font_error)
+        self.errorLabel.setAlignment(Qt.AlignCenter)
+        self.errorLabel.setStyleSheet("background: transparent;")
+
         self.lineEdit = QLineEdit(self.centralwidget)
         self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setGeometry(QRect(310, 220, 750, 90))
+        self.lineEdit.setGeometry(QRect(308, 220, 750, 90))
         font1 = QFont()
-        font1.setPointSize(14)
+        font1.setFamily("Consolas")
+        font1.setPointSize(24)
         self.lineEdit.setFont(font1)
         self.lineEdit.setStyleSheet(u"background-color: rgb(0, 0, 127);\n"
 "color: rgb(255, 255, 255);\n"
@@ -52,7 +67,7 @@ class Ui_MainWindow(object):
 "padding: 10px;")
         self.lineEdit_2 = QLineEdit(self.centralwidget)
         self.lineEdit_2.setObjectName(u"lineEdit_2")
-        self.lineEdit_2.setGeometry(QRect(310, 380, 750, 90))
+        self.lineEdit_2.setGeometry(QRect(308, 380, 750, 90))
         self.lineEdit_2.setFont(font1)
         self.lineEdit_2.setStyleSheet(u"background-color: rgb(0, 0, 127);\n"
 "color: rgb(255, 255, 255);\n"
@@ -61,29 +76,37 @@ class Ui_MainWindow(object):
 "padding: 10px;")
         self.pushButton = QPushButton(self.centralwidget)
         self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(590, 540, 250, 90))
+        self.pushButton.setGeometry(QRect(558, 540, 250, 90))
         self.pushButton.setFont(font)
         self.pushButton.setCursor(QCursor(Qt.PointingHandCursor))
-        self.pushButton.setStyleSheet(u"background-color: rgb(0, 0, 127);\n"
-"color: rgb(255, 255, 255);\n"
-"border: 2px solid #fff;\n"
-"border-radius: 20px;")
+        self.pushButton.setStyleSheet(u"QPushButton {\n"
+"   background-color: qlineargradient(spread:pad, x1:0.528409, y1:0.454, x2:1, y2:1, stop:0.0511364 rgba(0, 0, 107, 255), stop:1 rgba(0, 0, 255, 255));\n"
+"   color: rgb(255, 255, 255);\n"
+"   border: 2px solid #fff;\n"
+"   border-radius: 20px;\n"
+"}\n"
+"QPushButton::hover {\n"
+"   background: qlineargradient(spread:pad, x1:0.494, y1:0.5, x2:0.5, y2:1, stop:0.335227 rgba(9, 34, 126, 228), stop:1 rgba(0, 0, 0, 0));\n"
+"}\n")
         self.pushButton.setIconSize(QSize(24, 24))
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.statusbar = QStatusBar(MainWindow)
-        self.statusbar.setObjectName(u"statusbar")
-        MainWindow.setStatusBar(self.statusbar)
+        self.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(MainWindow)
+        self.retranslateUi()
 
-        QMetaObject.connectSlotsByName(MainWindow)
+        QMetaObject.connectSlotsByName(self)
     # setupUi
 
-    def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+    def retranslateUi(self):
+        self.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Jogador", None))
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Jogador 1", None))
         self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Jogador 2", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Jogar", None))
     # retranslateUi
 
+    def valideUsernames(self) -> bool:
+        user1, user2 = str(self.lineEdit.text()), str(self.lineEdit_2.text())
+
+        if len(user1) >= 3 and len(user2) >= 3:
+            return True
+        return False

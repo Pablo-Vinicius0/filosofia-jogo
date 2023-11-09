@@ -15,6 +15,7 @@ class InicialWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi()
+        self.showMaximized()
     def setupUi(self):
         self.setObjectName("InicialWindow")
         self.resize(1366, 768)

@@ -15,6 +15,7 @@ class ExplicacaoWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi()
+        self.showMaximized()
     def setupUi(self):
         self.setObjectName("Explicacao")
         self.setEnabled(True)
