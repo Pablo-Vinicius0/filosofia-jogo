@@ -108,10 +108,10 @@ class LoginWindow(QMainWindow):
         user1, user2 = str(self.lineEdit.text()), str(self.lineEdit_2.text())
 
         if len(user1) >= 3 and len(user2) >= 3:
-            if len(user1) <= 10 and len(user2) <= 10:
+            if len(user1) <= 8 and len(user2) <= 8:
                 return True
             else:
-                self.errorLabel.setText("Os usernames devem ter no máximo 10 caracteres")
+                self.errorLabel.setText("Os usernames devem ter no máximo 8 caracteres")
                 return False
             if user1.lower() != user2.lower():
                 return True

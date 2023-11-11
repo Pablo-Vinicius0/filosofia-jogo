@@ -49,6 +49,7 @@ class MainWindow(QMainWindow):
             ui_explicacao.explicacao_label.setText(ui_dica.dica['explicacao'][0])
             self.stackedWidget.addWidget(ui_explicacao)
         
+        self.setFixedSize(1366, 768)
         self.setCentralWidget(self.stackedWidget)
         
     def passarPag(self) -> None:
@@ -149,6 +150,7 @@ class MainWindow(QMainWindow):
                     return
                     
                 self.exibirDica(ui_dica)
+                ui_dica.mudarTurno()
                 ui_dica.count_erros = 0
             else:
                 ui_dica.count_erros = 1
