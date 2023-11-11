@@ -13,19 +13,24 @@ from PyQt5.QtGui import QIcon
 from variables import window_icon_path
 
 
-class Ui_Jogo(object):
-    def setupUi(self, Jogo):
+class Ui_Jogo(QtWidgets.QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setupUi()
+    def setupUi(self):
         self.dica = None
         self.turno_num = None
+        self.player1 = {"nome": "", "pontos": 0}
+        self.player2 = {"nome": "", "pontos": 0}
         self.reveladas = 0
-        Jogo.setObjectName("Jogo")
-        Jogo.setFixedSize(1366, 768)
-        Jogo.setStyleSheet("color: #fff")
+        self.setObjectName("Jogo")
+        self.setFixedSize(1366, 768)
+        self.setStyleSheet("color: #fff")
         font = QtGui.QFont()
         font.setFamily("Consolas")
         font.setPointSize(24)
-        Jogo.setFont(font)
-        self.centralwidget = QtWidgets.QWidget(Jogo)
+        self.setFont(font)
+        self.centralwidget = QtWidgets.QWidget(self)
         self.centralwidget.setObjectName("centralwidget")
         self.centralwidget.setStyleSheet("QWidget #centralwidget{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.0170455 rgba(0, 0, 255, 255), stop:0.596591 rgba(0, 0, 127, 255));}")
         self.titulo = QtWidgets.QLabel(self.centralwidget)
@@ -207,14 +212,22 @@ class Ui_Jogo(object):
         self.sendButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.input_resposta.setPlaceholderText('Resposta')
                 
-        Jogo.setCentralWidget(self.centralwidget)
+        self.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(Jogo)
-        QtCore.QMetaObject.connectSlotsByName(Jogo)
+        self.retranslateUi()
+        QtCore.QMetaObject.connectSlotsByName(self)
 
-    def retranslateUi(self, Jogo):
+    def mudarTurno(self):
+        self.turno_num = (self.turno_num + 1) % 2
+        self.turno.setText(f"Vez de {self.player1['nome'] if self.turno_num == 0 else self.player2['nome']}")
+
+    def atualizarPontos(self):
+        self.pontuacao_p1.setText(str(self.player1['pontos']))
+        self.pontuacao_p2.setText(str(self.player2['pontos']))
+
+    def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
-        Jogo.setWindowTitle(_translate("Jogo", "MainWindow"))
+        self.setWindowTitle(_translate("Jogo", "MainWindow"))
         self.titulo.setText(_translate("Jogo", "Titulo Massa Wow"))
         self.turno.setText(_translate("Jogo", "Vez de Mario")) # Pôr as variáveis dos jogadores
         self.dica1_pontos.setText(_translate("Jogo", "10"))

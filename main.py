@@ -41,7 +41,7 @@ class MainWindow(QMainWindow):
         
         for i in range(len(self.dicas)):
             ui_dica = self.createWindow()
-            self.stackedWidget.addWidget(ui_dica.centralwidget)
+            self.stackedWidget.addWidget(ui_dica)
             self.dica_windows.append(ui_dica)
             ui_explicacao = ExplicacaoWindow()
             ui_explicacao.proxima_btn.clicked.connect(self.passarPag)
@@ -55,9 +55,8 @@ class MainWindow(QMainWindow):
         self.pag_index += 1
         self.stackedWidget.setCurrentIndex(self.pag_index)
         
-    def createWindow(self) -> Ui_Jogo():
+    def createWindow(self) -> Ui_Jogo:
         ui_dica = Ui_Jogo()
-        ui_dica.setupUi(self)
         
         self.dica_atual = self.takeHint()
         ui_dica.dica = self.dica_atual
@@ -84,28 +83,19 @@ class MainWindow(QMainWindow):
                 self.respondidas.append(dica)
                 return dica
 
-    def resposta():
-        if acertou:
-            ui_dica.pushButton.setText("Explicação")
-
     def exibirDica(self, ui_dica: Ui_Jogo) -> None:
         ui_dica.reveladas += 1
 
         if ui_dica.pushButton.text() == "Explicação":
             self.passarPag()
         
-        self.passarTurno(ui_dica)
+        ui_dica.mudarTurno()
         
         if ui_dica.reveladas == 1:
             ui_dica.dica2.setVisible(True)
         elif ui_dica.reveladas == 2:
             ui_dica.dica3.setVisible(True)
             ui_dica.pushButton.setText('Explicação')
-            
-    def passarTurno(self, ui_dica: Ui_Jogo) -> None:
-        if ui_dica.reveladas in (1, 2):
-            ui_dica.turno.setText(f"Vez de {self.player1['nome'] if ui_dica.turno_num == 0 else self.player2['nome']}")
-            ui_dica.turno_num = (ui_dica.turno_num + 1) % 2
             
     def sendAnswer(self, ui_dica: Ui_Jogo) -> None:
         text = str(ui_dica.input_resposta.text())
@@ -120,23 +110,25 @@ class MainWindow(QMainWindow):
             
             pontos = 0
             dicas_reveladas = ui_dica.reveladas 
-            if ui_dica.turno == 0:
+            if ui_dica.turno_num == 0:
                 if dicas_reveladas == 0:
-                    self.player1['pontos'] += 10
+                    ui_dica.player1['pontos'] += 10
                 elif dicas_reveladas == 1:
-                    self.player1['pontos'] += 9
+                    ui_dica.player1['pontos'] += 9
                 elif dicas_reveladas == 2:
-                    self.player1['pontos'] += 8
-            elif ui_dica.turno == 1:
+                    ui_dica.player1['pontos'] += 8
+            elif ui_dica.turno_num == 1:
                 if dicas_reveladas == 0:
-                    self.player2['pontos'] += 10
+                    ui_dica.player2['pontos'] += 10
                 elif dicas_reveladas == 1:
-                    self.player2['pontos'] += 9
+                    ui_dica.player2['pontos'] += 9
                 elif dicas_reveladas == 2:
-                    self.player2['pontos'] += 8
+                    ui_dica.player2['pontos'] += 8
         else:
+            ui_dica.mudarTurno()
             print("Resposta errada!")
             print(ui_dica.dica['resposta'])
+        ui_dica.atualizarPontos()
 
     def checkUsernames(self) -> None:
         if self.loginWindow.valideUsernames():
@@ -146,12 +138,14 @@ class MainWindow(QMainWindow):
             
             for pag in self.dica_windows:
                 pag.turno.setText(f"Vez de {self.player1['nome'] if self.turno == 0 else self.player2['nome']}")
-                self.turno = (self.turno + 1) % 2
                 pag.turno_num = self.turno
                 pag.pontuacao_p1_label.setText(p1_nome)
                 pag.pontuacao_p2_label.setText(p2_nome)
                 pag.pontuacao_p1.setText(str(self.player1['pontos']))
                 pag.pontuacao_p2.setText(str(self.player2['pontos']))
+                pag.player1 = self.player1
+                pag.player2 = self.player2
+                self.turno = (self.turno + 1) % 2
             
             self.passarPag()
         
