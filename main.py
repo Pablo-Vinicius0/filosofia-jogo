@@ -55,6 +55,14 @@ class MainWindow(QMainWindow):
         self.pag_index += 1
         self.stackedWidget.setCurrentIndex(self.pag_index)
         
+        current = self.stackedWidget.currentWidget()
+        try:
+            current.pontuacao_p1.setText(str(self.player1['pontos']))
+            current.pontuacao_p2.setText(str(self.player2['pontos']))
+        except Exception as e:
+            #print(e)
+            pass
+        
     def createWindow(self) -> Ui_Jogo:
         ui_dica = Ui_Jogo()
         
@@ -87,6 +95,8 @@ class MainWindow(QMainWindow):
         ui_dica.reveladas += 1
 
         if ui_dica.pushButton.text() == "Explicação":
+            self.player1 = ui_dica.player1
+            self.player2 = ui_dica.player2
             self.passarPag()
         
         ui_dica.mudarTurno()
@@ -99,6 +109,8 @@ class MainWindow(QMainWindow):
             
     def sendAnswer(self, ui_dica: Ui_Jogo) -> None:
         text = str(ui_dica.input_resposta.text())
+        if not text:
+            return
 
         if text.lower() in ui_dica.dica['resposta']: 
             ui_dica.input_resposta.setText("Resposta correta!")
@@ -126,6 +138,20 @@ class MainWindow(QMainWindow):
                     ui_dica.player2['pontos'] += 8
         else:
             ui_dica.mudarTurno()
+            ui_dica.input_resposta.setText("")
+            if ui_dica.count_erros > 0:
+                if ui_dica.reveladas == 2:
+                    ui_dica.input_resposta.setText("Ninguém acertou!")
+                    s = ui_dica.input_resposta.styleSheet()
+                    ui_dica.input_resposta.setStyleSheet(s + "color:#F90001;")
+                    ui_dica.input_resposta.setDisabled(True)
+                    ui_dica.sendButton.setDisabled(True)
+                    return
+                    
+                self.exibirDica(ui_dica)
+                ui_dica.count_erros = 0
+            else:
+                ui_dica.count_erros = 1
             print("Resposta errada!")
             print(ui_dica.dica['resposta'])
         ui_dica.atualizarPontos()

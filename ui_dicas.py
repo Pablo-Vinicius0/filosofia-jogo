@@ -22,6 +22,7 @@ class Ui_Jogo(QtWidgets.QMainWindow):
         self.turno_num = None
         self.player1 = {"nome": "", "pontos": 0}
         self.player2 = {"nome": "", "pontos": 0}
+        self.count_erros = 0
         self.reveladas = 0
         self.setObjectName("Jogo")
         self.setFixedSize(1366, 768)
