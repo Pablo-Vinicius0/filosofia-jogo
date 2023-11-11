@@ -140,22 +140,15 @@ class MainWindow(QMainWindow):
         else:
             ui_dica.mudarTurno()
             ui_dica.input_resposta.setText("")
-            if ui_dica.count_erros > 0:
-                if ui_dica.reveladas == 2:
-                    ui_dica.input_resposta.setText("Ninguém acertou!")
-                    s = ui_dica.input_resposta.styleSheet()
-                    ui_dica.input_resposta.setStyleSheet(s + "color:#F90001;")
-                    ui_dica.input_resposta.setDisabled(True)
-                    ui_dica.sendButton.setDisabled(True)
-                    return
-                    
-                self.exibirDica(ui_dica)
-                ui_dica.mudarTurno()
-                ui_dica.count_erros = 0
-            else:
-                ui_dica.count_erros = 1
-            print("Resposta errada!")
-            print(ui_dica.dica['resposta'])
+            if ui_dica.reveladas == 2:
+                ui_dica.input_resposta.setText("Ninguém acertou!")
+                s = ui_dica.input_resposta.styleSheet()
+                ui_dica.input_resposta.setStyleSheet(s + "color:#F90001;")
+                ui_dica.input_resposta.setDisabled(True)
+                ui_dica.sendButton.setDisabled(True)
+                return
+            self.exibirDica(ui_dica)
+            ui_dica.mudarTurno()
         ui_dica.atualizarPontos()
 
     def checkUsernames(self) -> None:
