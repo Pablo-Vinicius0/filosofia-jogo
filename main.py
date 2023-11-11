@@ -20,6 +20,7 @@ class MainWindow(QMainWindow):
         self.pag_index = 1
         self.player1 = {"nome": "", "pontos": 0}
         self.player2 = {"nome": "", "pontos": 0}
+        self.turno = randint(0, 1)
         
         self.dica_windows = []
         
@@ -94,11 +95,18 @@ class MainWindow(QMainWindow):
         if ui_dica.pushButton.text() == "Explicação":
             self.passarPag()
         
+        self.passarTurno(ui_dica)
+        
         if ui_dica.reveladas == 1:
             ui_dica.dica2.setVisible(True)
         elif ui_dica.reveladas == 2:
             ui_dica.dica3.setVisible(True)
             ui_dica.pushButton.setText('Explicação')
+            
+    def passarTurno(self, ui_dica: Ui_Jogo) -> None:
+        if ui_dica.reveladas in (1, 2):
+            ui_dica.turno.setText(f"Vez de {self.player1['nome'] if ui_dica.turno_num == 0 else self.player2['nome']}")
+            ui_dica.turno_num = (ui_dica.turno_num + 1) % 2
             
     def sendAnswer(self, ui_dica: Ui_Jogo) -> None:
         text = str(ui_dica.input_resposta.text())
@@ -112,14 +120,19 @@ class MainWindow(QMainWindow):
     def checkUsernames(self) -> None:
         if self.loginWindow.valideUsernames():
             p1_nome, p2_nome = str(self.loginWindow.lineEdit.text()), str(self.loginWindow.lineEdit_2.text())
+            self.player1['nome'] = p1_nome
+            self.player2['nome'] = p2_nome
             
             for pag in self.dica_windows:
+                pag.turno.setText(f"Vez de {self.player1['nome'] if self.turno == 0 else self.player2['nome']}")
+                self.turno = (self.turno + 1) % 2
+                pag.turno_num = self.turno
                 pag.pontuacao_p1_label.setText(p1_nome)
                 pag.pontuacao_p2_label.setText(p2_nome)
+                pag.pontuacao_p1.setText(str(self.player1['pontos']))
+                pag.pontuacao_p2.setText(str(self.player2['pontos']))
             
             self.passarPag()
-        else:
-            self.loginWindow.errorLabel.setText("Os usernames devem ter pelo menos 3 caracteres")
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
