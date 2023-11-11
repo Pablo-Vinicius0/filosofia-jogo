@@ -1,5 +1,6 @@
 import sys
 import PyQt5.QtCore
+from PyQt5 import QtGui
 from PyQt5.QtWidgets import QApplication, QMainWindow, QStackedWidget
 from random import randint
 
@@ -70,8 +71,6 @@ class MainWindow(QMainWindow):
         ui_dica.dica2.setHidden(True)
         ui_dica.dica3.setHidden(True)
         
-        ui_dica.reveladas = 0
-        
         ui_dica.pushButton.clicked.connect(lambda: self.exibirDica(ui_dica))
         ui_dica.sendButton.clicked.connect(lambda: self.sendAnswer(ui_dica))
         ui_dica.input_resposta.returnPressed.connect(lambda: self.sendAnswer(ui_dica))
@@ -111,8 +110,30 @@ class MainWindow(QMainWindow):
     def sendAnswer(self, ui_dica: Ui_Jogo) -> None:
         text = str(ui_dica.input_resposta.text())
 
-        if text.lower() in ui_dica.dica['resposta']:
-            print("Resposta correta!")
+        if text.lower() in ui_dica.dica['resposta']: 
+            ui_dica.input_resposta.setText("Resposta correta!")
+            s = ui_dica.input_resposta.styleSheet()
+            ui_dica.input_resposta.setStyleSheet(s + "color:#00F901;")
+            ui_dica.input_resposta.setDisabled(True)
+            ui_dica.sendButton.setDisabled(True)
+            ui_dica.pushButton.setText("Explicação")
+            
+            pontos = 0
+            dicas_reveladas = ui_dica.reveladas 
+            if ui_dica.turno == 0:
+                if dicas_reveladas == 0:
+                    self.player1['pontos'] += 10
+                elif dicas_reveladas == 1:
+                    self.player1['pontos'] += 9
+                elif dicas_reveladas == 2:
+                    self.player1['pontos'] += 8
+            elif ui_dica.turno == 1:
+                if dicas_reveladas == 0:
+                    self.player2['pontos'] += 10
+                elif dicas_reveladas == 1:
+                    self.player2['pontos'] += 9
+                elif dicas_reveladas == 2:
+                    self.player2['pontos'] += 8
         else:
             print("Resposta errada!")
             print(ui_dica.dica['resposta'])
@@ -133,7 +154,7 @@ class MainWindow(QMainWindow):
                 pag.pontuacao_p2.setText(str(self.player2['pontos']))
             
             self.passarPag()
-
+        
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     jogo = MainWindow()

@@ -17,6 +17,7 @@ class Ui_Jogo(object):
     def setupUi(self, Jogo):
         self.dica = None
         self.turno_num = None
+        self.reveladas = 0
         Jogo.setObjectName("Jogo")
         Jogo.setFixedSize(1366, 768)
         Jogo.setStyleSheet("color: #fff")
