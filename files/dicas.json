@@ -94,7 +94,7 @@
         ],
         "resposta_exibir": "Fortuna para os estóicos",
         "resposta": [
-            "Fortuna para os estoicos",
+            "fortuna para os estoicos"
         ],
         "explicacao": [
             "A resposta \"Fortuna para os estóicos\"Fortuna é uma divindade romana responsável pela sorte, pelo acaso e pelo imprevisto. Os gregos a chamavam de Tique. Para a filosofia adota-se o termo acaso. O acaso é para os estóicos um erro ou ilusão, pois entendiam que tudo acontecia no mundo por necessidade racional."
@@ -109,7 +109,12 @@
         "resposta_exibir": "Ética para Aristóteles",
         "resposta": [
             "ética aristotélica",
-            "ética de aristoteles"
+            "ética de aristoteles",
+            "etica de aristoteles",
+            "etica para aristoteles",
+            "ética para aristóteles",
+            "aristoteles",
+            "aristóteles"
         ],
         "explicacao": [
             "Para Aristóteles, a ética opera no campo do possível, tudo aquilo que depende das deliberações, escolhas e da ação humana. Ele propõe a ideia da ação guiada pela razão como um princípio fundamental da existência ética."
