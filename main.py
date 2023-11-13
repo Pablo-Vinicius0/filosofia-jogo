@@ -185,5 +185,6 @@ class MainWindow(QMainWindow):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     jogo = MainWindow()
+    jogo.setWindowTitle('Samuel')
     jogo.show()
     app.exec()
