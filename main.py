@@ -11,6 +11,7 @@ from utils import (load_json)
 from ui_inicial import InicialWindow
 from ui_explicacao import ExplicacaoWindow
 from ui_login import LoginWindow
+from ui_final import FinalWindow
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -44,13 +45,24 @@ class MainWindow(QMainWindow):
             self.stackedWidget.addWidget(ui_dica)
             self.dica_windows.append(ui_dica)
             ui_explicacao = ExplicacaoWindow()
-            ui_explicacao.proxima_btn.clicked.connect(self.passarPag)
+            ui_explicacao.proxima_btn.clicked.connect(lambda: self.explicacaoPxm(ui_dica))
             ui_explicacao.resposta_label.setText(ui_dica.dica['resposta_exibir'])
             ui_explicacao.explicacao_label.setText(ui_dica.dica['explicacao'][0])
             self.stackedWidget.addWidget(ui_explicacao)
+            
+        self.FinalWindow = FinalWindow()
+        self.stackedWidget.addWidget(self.FinalWindow)
         
         self.setFixedSize(1366, 768)
         self.setCentralWidget(self.stackedWidget)
+        
+    def explicacaoPxm(self, ui_dica: Ui_Jogo) -> None:
+        name1, pontos1 = ui_dica.player1['nome'], ui_dica.player1['pontos']
+        name2, pontos2 = ui_dica.player2['nome'], ui_dica.player2['pontos']
+        self.FinalWindow.setPlayersData(name1, pontos1, name2, pontos2)
+        self.FinalWindow.setWinner(name1, pontos1, name2, pontos2)
+        
+        self.passarPag()
         
     def passarPag(self) -> None:
         self.pag_index += 1
