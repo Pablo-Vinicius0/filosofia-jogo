@@ -63,7 +63,7 @@ class FinalWindow(QtWidgets.QMainWindow):
 "}")
         self.centralwidget.setObjectName("centralwidget")
         self.tituloLabel = QtWidgets.QLabel(self.centralwidget)
-        self.tituloLabel.setGeometry(QtCore.QRect(293, 50, 780, 90))
+        self.tituloLabel.setGeometry(QtCore.QRect(293, 30, 780, 90))
         font = QtGui.QFont()
         font.setFamily("Consolas")
         font.setPointSize(40)
@@ -74,7 +74,7 @@ class FinalWindow(QtWidgets.QMainWindow):
         self.tituloLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.tituloLabel.setObjectName("tituloLabel")
         self.campeaoLabel = QtWidgets.QLabel(self.centralwidget)
-        self.campeaoLabel.setGeometry(QtCore.QRect(466, 172, 434, 60))
+        self.campeaoLabel.setGeometry(QtCore.QRect(466, 122, 434, 60))
         font = QtGui.QFont()
         font.setFamily("Consolas")
         font.setPointSize(28)
@@ -82,7 +82,7 @@ class FinalWindow(QtWidgets.QMainWindow):
         self.campeaoLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.campeaoLabel.setObjectName("campeaoLabel")
         self.player1Widget = QtWidgets.QWidget(self.centralwidget)
-        self.player1Widget.setGeometry(QtCore.QRect(228, 250, 420, 440))
+        self.player1Widget.setGeometry(QtCore.QRect(228, 190, 420, 440))
         self.player1Widget.setStyleSheet("#playerNomeLabel {\n"
 "    background: qlineargradient(spread:pad, x1:0.552, y1:0, x2:0.557, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(9, 36, 126, 255));\n"
 "    border: 2px solid #fff;\n"
@@ -113,7 +113,7 @@ class FinalWindow(QtWidgets.QMainWindow):
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.player2Widget = QtWidgets.QWidget(self.centralwidget)
-        self.player2Widget.setGeometry(QtCore.QRect(718, 250, 420, 440))
+        self.player2Widget.setGeometry(QtCore.QRect(718, 190, 420, 440))
         self.player2Widget.setStyleSheet("#playerNomeLabel_2 {\n"
 "    background: qlineargradient(spread:pad, x1:0.552, y1:0, x2:0.557, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(9, 36, 126, 255));\n"
 "    border: 2px solid #fff;\n"
@@ -143,6 +143,22 @@ class FinalWindow(QtWidgets.QMainWindow):
         self.label_2.setFont(font)
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2.setObjectName("label_2")
+        
+        self.sobre_btn = QtWidgets.QPushButton(self.centralwidget)
+        self.sobre_btn.setGeometry(QtCore.QRect(538, 652, 290, 90))
+        font = QtGui.QFont()
+        font.setFamily("Consolas")
+        font.setPointSize(36)
+        font.setBold(False)
+        font.setWeight(50)
+        self.sobre_btn.setFont(font)
+        self.sobre_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.sobre_btn.setObjectName("sobre_btn")
+        self.sobre_btn.setStyleSheet("#sobre_btn {\n"
+"    background: qlineargradient(spread:pad, x1:0.552, y1:0, x2:0.557, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(9, 36, 126, 255));\n"
+"    border: 2px solid #fff; border-radius: 30px; color: #fff;\n"
+"}")
+        
         self.setCentralWidget(self.centralwidget)
 
         self.retranslateUi()
@@ -151,6 +167,7 @@ class FinalWindow(QtWidgets.QMainWindow):
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("FinalWindow", "MainWindow"))
+        self.sobre_btn.setText(_translate("FinalWindow", "Sobre"))
         self.tituloLabel.setText(_translate("FinalWindow", "Resultado"))
         self.campeaoLabel.setText(_translate("FinalWindow", "Player1 ganhou"))
         self.playerNomeLabel.setText(_translate("FinalWindow", "Player1"))

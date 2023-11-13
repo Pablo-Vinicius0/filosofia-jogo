@@ -12,6 +12,7 @@ from ui_inicial import InicialWindow
 from ui_explicacao import ExplicacaoWindow
 from ui_login import LoginWindow
 from ui_final import FinalWindow
+from ui_sobre import SobreWindow
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -33,7 +34,9 @@ class MainWindow(QMainWindow):
         self.stackedWidget = QStackedWidget(self)
 
         self.inicialWindow = InicialWindow()
+        self.SobreWindow = SobreWindow()
         self.inicialWindow.iniciar_btn.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(self.pag_index))
+        self.inicialWindow.sobre_btn.clicked.connect(self.SobreWindow.show)
         self.stackedWidget.addWidget(self.inicialWindow)
         
         self.loginWindow = LoginWindow()
@@ -51,6 +54,7 @@ class MainWindow(QMainWindow):
             self.stackedWidget.addWidget(ui_explicacao)
             
         self.FinalWindow = FinalWindow()
+        self.FinalWindow.sobre_btn.clicked.connect(self.SobreWindow.show)
         self.stackedWidget.addWidget(self.FinalWindow)
         
         self.setFixedSize(1366, 768)
@@ -78,8 +82,12 @@ class MainWindow(QMainWindow):
         
     def createWindow(self) -> Ui_Jogo:
         ui_dica = Ui_Jogo()
-        
-        self.dica_atual = self.takeHint()
+
+        if not self.dica_windows:
+            self.dica_atual = self.dicas["0"]
+            self.respondidas.append(self.dica_atual)
+        else:
+            self.dica_atual = self.takeHint()
         ui_dica.dica = self.dica_atual
         dica1, dica2, dica3 = self.dica_atual['dicas']
         
@@ -99,7 +107,7 @@ class MainWindow(QMainWindow):
         
     def takeHint(self) -> dict:
         while True:
-            dica = self.dicas[str(randint(1, len(self.dicas)))]
+            dica = self.dicas[str(randint(1, len(self.dicas)-1))]
             if dica not in self.respondidas:
                 self.respondidas.append(dica)
                 return dica
