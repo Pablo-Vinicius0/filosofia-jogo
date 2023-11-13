@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FinalWindow</class>
+ <widget class="QMainWindow" name="FinalWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1366</width>
+    <height>768</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QLabel {color: #fff;}
+
+#player1Widget  {
+	border: 2px solid #fff;	
+	background: qlineargradient(spread:pad, x1:0.523, y1:0, x2:0.625, y2:1, stop:0.5 rgba(9, 36, 126, 176), stop:1 rgba(0, 0, 0, 189));
+}
+
+#player2Widget  {
+	border: 2px solid #fff;	
+	background: qlineargradient(spread:pad, x1:0.523, y1:0, x2:0.625, y2:1, stop:0.5 rgba(9, 36, 126, 176), stop:1 rgba(0, 0, 0, 189));
+}
+
+
+#tituloLabel {
+	background: qlineargradient(spread:pad, x1:0.591273, y1:1, x2:0.511363, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(9, 36, 126, 255));
+	border-radius: 30px;
+	border: 4px solid #fff;
+}
+
+#centralwidget {
+	background: qlineargradient(spread:pad, x1:0.591273, y1:1, x2:0.511363, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(9, 36, 126, 255));
+}</string>
+   </property>
+   <widget class="QLabel" name="tituloLabel">
+    <property name="geometry">
+     <rect>
+      <x>293</x>
+      <y>50</y>
+      <width>780</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Consolas</family>
+      <pointsize>40</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Resultado</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="campeaoLabel">
+    <property name="geometry">
+     <rect>
+      <x>466</x>
+      <y>172</y>
+      <width>434</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Consolas</family>
+      <pointsize>28</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Player1 ganhou</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QWidget" name="player1Widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>228</x>
+      <y>250</y>
+      <width>420</width>
+      <height>440</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#playerNomeLabel {
+	background: qlineargradient(spread:pad, x1:0.552, y1:0, x2:0.557, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(9, 36, 126, 255));
+	border: 2px solid #fff;
+}</string>
+    </property>
+    <widget class="QLabel" name="playerNomeLabel">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>420</width>
+       <height>100</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Consolas</family>
+       <pointsize>36</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Player1</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="pontosLabel">
+     <property name="geometry">
+      <rect>
+       <x>85</x>
+       <y>142</y>
+       <width>250</width>
+       <height>211</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Consolas</family>
+       <pointsize>114</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>80</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>72</x>
+       <y>376</y>
+       <width>276</width>
+       <height>49</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Consolas</family>
+       <pointsize>36</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Pontos</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="player2Widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>718</x>
+      <y>250</y>
+      <width>420</width>
+      <height>440</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#playerNomeLabel_2 {
+	background: qlineargradient(spread:pad, x1:0.552, y1:0, x2:0.557, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(9, 36, 126, 255));
+	border: 2px solid #fff;
+}</string>
+    </property>
+    <widget class="QLabel" name="playerNomeLabel_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>420</width>
+       <height>100</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Consolas</family>
+       <pointsize>36</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Player2</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="pontosLabel_2">
+     <property name="geometry">
+      <rect>
+       <x>85</x>
+       <y>142</y>
+       <width>250</width>
+       <height>211</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Consolas</family>
+       <pointsize>114</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>48</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>72</x>
+       <y>376</y>
+       <width>276</width>
+       <height>49</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Consolas</family>
+       <pointsize>36</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Pontos</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

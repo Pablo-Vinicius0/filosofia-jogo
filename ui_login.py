@@ -45,13 +45,13 @@ class LoginWindow(QMainWindow):
 
         self.errorLabel = QLabel(self.centralwidget)
         self.errorLabel.setObjectName(u"errorLabel")
-        self.errorLabel.setGeometry(QRect(400, 665, 565, 50))
+        self.errorLabel.setGeometry(QRect(83, 665, 1200, 50))
         font_error = QFont()
         font_error.setFamily("Consolas")
-        font_error.setPointSize(12)
+        font_error.setPointSize(24)
         self.errorLabel.setFont(font_error)
         self.errorLabel.setAlignment(Qt.AlignCenter)
-        self.errorLabel.setStyleSheet("background: transparent;")
+        self.errorLabel.setStyleSheet("background: transparent; color: red;")
 
         self.lineEdit = QLineEdit(self.centralwidget)
         self.lineEdit.setObjectName(u"lineEdit")
@@ -108,5 +108,16 @@ class LoginWindow(QMainWindow):
         user1, user2 = str(self.lineEdit.text()), str(self.lineEdit_2.text())
 
         if len(user1) >= 3 and len(user2) >= 3:
-            return True
+            if len(user1) <= 8 and len(user2) <= 8:
+                return True
+            else:
+                self.errorLabel.setText("Os usernames devem ter no máximo 8 caracteres")
+                return False
+            if user1.lower() != user2.lower():
+                return True
+            else:
+                self.errorLabel.setText("Os usernames devem ser diferentes")
+                return False
+        else:
+            self.errorLabel.setText("Os usernames devem ter pelo menos 3 caracteres")
         return False

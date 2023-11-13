@@ -68,7 +68,7 @@ class InicialWindow(QtWidgets.QMainWindow):
         self.iniciar_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.iniciar_btn.setObjectName("iniciar_btn")
         self.sobre_btn = QtWidgets.QPushButton(self)
-        self.sobre_btn.setGeometry(QtCore.QRect(470, 587, 440, 110))
+        self.sobre_btn.setGeometry(QtCore.QRect(463, 587, 440, 110))
         font = QtGui.QFont()
         font.setFamily("Consolas")
         font.setPointSize(36)
