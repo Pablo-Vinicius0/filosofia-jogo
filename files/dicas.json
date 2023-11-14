@@ -80,7 +80,7 @@
         ],
         "resposta_exibir": "Fortuna para os estóicos",
         "resposta": [
-            "Fortuna para os estoicos",
+            "Fortuna para os estoicos"
         ],
         "explicacao": [
             "A resposta \"Fortuna para os estóicos\"Fortuna é uma divindade romana responsável pela sorte, pelo acaso e pelo imprevisto. Os gregos a chamavam de Tique. Para a filosofia adota-se o termo acaso. O acaso é para os estóicos um erro ou ilusão, pois entendiam que tudo acontecia no mundo por necessidade racional."
@@ -103,18 +103,18 @@
     },
     "7": {
         "dicas": [
-            "É produto do hábito, é tudo aquilo que podemos alterar pelo hábito",
-            "É adquirida através da prática, assim como as artes",
-            "Está relacionada com as ações e emoções, que por sua vez estão relacionadas com o prazer ou sofrimento"
+            "Nasce e se desenvolve com o decorrer da vida",
+            "Vai se aprimorando à medida que nos dedicamos mais aos estudos",
+            "Termo utilizado por Aristóteles"
         ],
-        "resposta_exibir": "Excelência Moral",
+        "resposta_exibir": "Excelência Intelectual",
         "resposta": [
-            "excelência moral",
-            "excelencia moral",
-            "virtude moral"
+            "excelência intelectual",
+            "excelencia intelectual",
+            "virtude intelectual"
         ],
         "explicacao": [
-            "A excelência moral é uma disposição da alma relacionada com a escolha de ações e emoções, disposição esta consistente num meio-termo determinado pela razão."
+            "A excelência intelectual é um termo utilizado por Aristóteles para designar que essa excelência nasce e se desenvolve com a instrução, ou seja, com o processo educativo e formativo. Por isso se desenvolve com o tempo e experiência, então para ter essa excelência precisamos prática até conseguir tê-la."
         ]
     },
     "8": {
@@ -129,6 +129,37 @@
         ],
         "explicacao": [
             "No texto de Sêneca, a versatilidade possui um caráter negativo, ao passo que para nós, a versatilidade é algo positivo. Atualmente, cada vez mais se defende a necessidade de sermos versáteis. No caso do texto de Sêneca, podemos substituir o termo versátil por volúvel e assim nos aproximarmos mais da ideia que Sêneca quer nos passar."
+        ]
+    },
+    "9": {
+        "dicas":[
+            "É tudo aquilo que podemos alterar pelo hábito",
+            "Adquirida através da prática",
+            "Termo utilizado por Aristóteles"
+        ],
+        "resposta_exibir": "Excelência Moral",
+        "resposta": [
+            "excelencia moral",
+            "excelência moral"
+        ],
+        "explicacao": [
+            "Representa tudo que pode ser alterado com o hábito, cada vez que fazemos podemos alterar algum conhecimento que temos, estão para podermos ter essa excelência precisamos de prática, também a é capacidade que desenvolvemos para lidar com nossas emoções e ações na relação direta com o prazer e o sofrimento."
+        ]
+    },
+    "10": {
+        "dicas":[
+            "A felicidade é o bem supremo",
+            "A vida humana tem uma finalidade e essa finalidade é ser feliz",
+            "Nascido na Macedônia"
+        ],
+        "resposta_exibir": "Aristóteles",
+        "resposta": [
+            "aristóteles",
+            "aristoteles",
+            "Aristoteles"
+        ],
+        "explicacao": [
+            "Para ele a felicidade é o bem supremo, toda a vida humana tem uma finalidade, ou seja, uma função e o atendimento dessa função é a felicidade. Ao contrário, ninguém escolhe a felicidade por causa das várias formas de excelência, nem, de um modo geral, por qualquer outra coisa além dela mesma."
         ]
     }
 }
