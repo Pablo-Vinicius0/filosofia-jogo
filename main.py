@@ -3,8 +3,9 @@ import PyQt5.QtCore
 from PyQt5 import QtGui
 from PyQt5.QtWidgets import QApplication, QMainWindow, QStackedWidget
 from random import randint
+from PySide6.QtGui import QIcon
 
-from variables import (dicas_path)
+from variables import (dicas_path, ico_path)
 from ui_dicas import Ui_Jogo
 from utils import (load_json)
 
@@ -83,11 +84,7 @@ class MainWindow(QMainWindow):
     def createWindow(self) -> Ui_Jogo:
         ui_dica = Ui_Jogo()
 
-        if not self.dica_windows:
-            self.dica_atual = self.dicas["0"]
-            self.respondidas.append(self.dica_atual)
-        else:
-            self.dica_atual = self.takeHint()
+        self.dica_atual = self.takeHint()
         ui_dica.dica = self.dica_atual
         dica1, dica2, dica3 = self.dica_atual['dicas']
         
@@ -107,7 +104,7 @@ class MainWindow(QMainWindow):
         
     def takeHint(self) -> dict:
         while True:
-            dica = self.dicas[str(randint(1, len(self.dicas)-1))]
+            dica = self.dicas[str(randint(1, len(self.dicas)))]
             if dica not in self.respondidas:
                 self.respondidas.append(dica)
                 return dica
