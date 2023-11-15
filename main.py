@@ -1,11 +1,11 @@
 import sys
-import PyQt5.QtCore
+from PyQt5 import QtCore
 from PyQt5 import QtGui
 from PyQt5.QtWidgets import QApplication, QMainWindow, QStackedWidget
 from random import randint
-from PySide6.QtGui import QIcon
+from PyQt5.QtGui import QIcon
 
-from variables import (dicas_path, ico_path)
+from variables import (dicas_path, ico_path, window_icon_path2)
 from ui_dicas import Ui_Jogo
 from utils import (load_json)
 
@@ -133,7 +133,8 @@ class MainWindow(QMainWindow):
         if text.lower() in ui_dica.dica['resposta']: 
             ui_dica.input_resposta.setText("Resposta correta!")
             s = ui_dica.input_resposta.styleSheet()
-            ui_dica.input_resposta.setStyleSheet(s + "color:#00F901;")
+            ui_dica.input_resposta.setStyleSheet(s + "color:#00F901; border: 2px solid #00F901;")
+            
             ui_dica.input_resposta.setDisabled(True)
             ui_dica.sendButton.setDisabled(True)
             ui_dica.pushButton.setText("Explicação")
