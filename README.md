@@ -4,5 +4,5 @@
  O projeto foi desenvolvido em python e a framework PyQt5 foi utilizada majoritariamente. Para auxiliar no desenvolvimento da interface gráfica, o aplicativo "qtdesigner" também foi utilizado.
 
 ### Programado por:
-- [THEPEQUENO](https://github.com/THEPEQUENO)
+- [Italo Gabriel](https://github.com/gabrielItalo11)
 - [PabloVinicius0](https://github.com/Pablo-Vinicius0)
